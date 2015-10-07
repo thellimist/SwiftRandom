@@ -19,7 +19,7 @@ Download and drop 'Randoms.swift' in your project.
 ```
 func createRandom() {
 	// Return random Int >= 10 and <= 20
-	Randoms.randomBetween(10,20)) 
+	Randoms.randomBetween(10,20)  
 
 	// Return true 30%, false %70
 	Randoms.randomPercentageisOver(70)
