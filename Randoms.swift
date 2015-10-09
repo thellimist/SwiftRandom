@@ -98,6 +98,10 @@ struct Randoms {
     static func randomDateWithinDaysBeforeToday(days: Int) -> NSDate {
         return NSDate.randomWithinDaysBeforeToday(days)
     }
+
+    static func randomDate() -> NSDate {
+        return NSDate.random()
+    }
     
     static func randomCGFloat() -> CGFloat {
         return CGFloat.random()
