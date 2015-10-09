@@ -58,17 +58,19 @@ func asMethods() {
 	// Example Output: UIDeviceRGBColorSpace 0.645737 0.126625 0.52535 1
 	Randoms.randomColor()
 
+	// ==================== Fake Generators for Fake Datasources ==================== //
+
+	// Return random English honorific
+	// Example Output: "Dr."
+	Randoms.randomEnglishHonorific()
+
 	// Return random name
 	// Example Output: "Megan Freeman"
 	Randoms.randomFakeName()
 
-    // Return random English honorific
-    // Example Output: "Dr."
-    Randoms.randomEnglishHonorific()
-
-    // Return random fake name prefixed by English honorific
-    // Example Output: "Dr. Megan Freeman"
-    Randoms.randomFakeNameAndEnglishHonorific()
+	// Return random fake name prefixed by English honorific
+	// Example Output: "Dr. Megan Freeman"
+	Randoms.randomFakeNameAndEnglishHonorific()
 
 	// Return "Male" or "Female" as String
 	// Example Output: "Female"
