@@ -62,6 +62,14 @@ func asMethods() {
 	// Example Output: "Megan Freeman"
 	Randoms.randomFakeName()
 
+    // Return random English honorific
+    // Example Output: "Dr."
+    Randoms.randomEnglishHonorific()
+
+    // Return random fake name prefixed by English honorific
+    // Example Output: "Dr. Megan Freeman"
+    Randoms.randomFakeNameAndEnglishHonorific()
+
 	// Return "Male" or "Female" as String
 	// Example Output: "Female"
 	Randoms.randomFakeGender()
@@ -84,8 +92,8 @@ func asMethods() {
 ###Requirements
 - Swift version 2.0
 
-###Imporovement
-Feel free adding your own random datas functions and sending pull requests.
+###Improvement
+Feel free adding your own random data functions and sending pull requests.
 
 ###License
 SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).

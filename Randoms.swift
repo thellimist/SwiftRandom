@@ -117,8 +117,9 @@ struct Randoms {
     
     
     static func randomFakeName() -> String {
-        let nameList = ["Henry Pearson", "William Adams", "Geoffrey Cole", "Jim Francis", "Yvonne Andrews", "Jamie Casey", "Leticia Gross", "Priscilla Lane", "Sidney Thomas", "Nancy Patrick", "Edmund Strickland", "Bill Nicholas", "Megan Freeman"]
-        return nameList.randomItem()
+        let firstNameList = ["Henry", "William", "Geoffrey", "Jim", "Yvonne", "Jamie", "Leticia", "Priscilla", "Sidney", "Nancy", "Edmund", "Bill", "Megan"]
+        let lastNameList = ["Pearson", "Adams", "Cole", "Francis", "Andrews", "Casey", "Gross", "Lane", "Thomas", "Patrick", "Strickland", "Nicolas", "Freeman"]
+        return firstNameList.randomItem() + " " + lastNameList.randomItem()
     }
     
     static func randomFakeGender() -> String {
@@ -138,5 +139,16 @@ struct Randoms {
     static func randomFakeTag() -> String {
         let tagList = ["meta", "forum", "troll", "meme", "question", "important", "like4like", "f4f"]
         return tagList.randomItem()
+    }
+    
+    static func randomEnglishHonorific() -> String {
+        let englishHonorificsList = ["Mr.", "Ms.", "Dr.", "Mrs.", "Mz.", "Mx.", "Prof."]
+        return englishHonorificsList.randomItem()
+    }
+    
+    static func randomFakeNameAndEnglishHonorific() -> String {
+        let englishHonorific = randomEnglishHonorific()
+        let name = randomFakeName()
+        return englishHonorific + " " + name
     }
 }
