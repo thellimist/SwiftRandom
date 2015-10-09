@@ -5,11 +5,13 @@ SwiftRandom is a tiny help suite for generating random data such as
 * Random Gender
 * Random Title
 * Random Tag
-* Random Number in Interval
+* Random Int
+* Random CGFloat
 * Random Conversation
 * Random Bools
 * Random Color
 * Random Date before today
+* Random Date since 1970
 * Roll dice over a certain percentage
 
 ### Installation
@@ -17,11 +19,25 @@ Download and drop 'Randoms.swift' in your project.
 
 ### Usage
 ```
-func createRandom() {
+func asExtension() {
+	Int.random()
+	CGFloat.random()
+	NSDate.random()
+	NSDate.randomWithinDaysBeforeToday(7)
+	UIColor.random()
+}
+```
+
+```
+func asMethods() {
 	// Return random Int >= 10 and <= 20
 	// Example Output: 13
-	Randoms.randomBetween(10,20)  
+	Randoms.randomInt(10,20) 
 
+	// Return random CGFloat between 1 >= and >= 0
+	// Example Output: 0.622616
+	Randoms.randomCGFloat()
+	
 	// Return true 30%, false %70
 	// Example Output: false
 	Randoms.randomPercentageisOver(70)
@@ -34,29 +50,33 @@ func createRandom() {
 	// Example Output: 2015-10-08 03:55:09 +0000
 	Randoms.randomDateWithinDaysBeforeToday(7)
 
+	// Random Date since 1970
+	// Example Output: 1997-02-01 15:27:08 +0000
+	Randoms.randomDate()
+
 	// Return UIColor. Alpha channel always 1.
 	// Example Output: UIDeviceRGBColorSpace 0.645737 0.126625 0.52535 1
 	Randoms.randomColor()
 
 	// Return random name
 	// Example Output: "Megan Freeman"
-	Randoms.randomName()
+	Randoms.randomFakeName()
 
 	// Return "Male" or "Female" as String
 	// Example Output: "Female"
-	Randoms.randomGender()
+	Randoms.randomFakeGender()
 
 	// Return random conversation
 	// Example Output: "No! I'm tired of doing what you say."
-	Randoms.randomConversation()
+	Randoms.randomFakeConversation()
 
 	// Return random title 
 	// Example Output: "B2 Pilot @ USAF"
-	Randoms.randomTitle()
+	Randoms.randomFakeTitle()
 
 	// Return random tag as string 
 	// Example Output: "question"
-	Randoms.randomTag()
+	Randoms.randomFakeTag()
 }
 
 ```
