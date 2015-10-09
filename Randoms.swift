@@ -99,7 +99,7 @@ struct Randoms {
         return NSDate.randomWithinDaysBeforeToday(days)
     }
     
-    private static func randomCGFloatFrom0to1() -> CGFloat {
+    static func randomCGFloat() -> CGFloat {
         return CGFloat.random()
     }
     
