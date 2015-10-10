@@ -10,18 +10,21 @@ import UIKit
 // each type has its own random
 
 extension Int {
+    /// SwiftRandom extension
     static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
 }
 
 extension Bool {
+    /// SwiftRandom extension
     static func random() -> Bool {
         return Int.random() % 2 == 0
     }
 }
 
 extension NSDate {
+    /// SwiftRandom extension
     static func randomWithinDaysBeforeToday(days: Int) -> NSDate {
         let today = NSDate()
         
@@ -48,6 +51,7 @@ extension NSDate {
         return rndDate1
     }
     
+    /// SwiftRandom extension
     static func random() -> NSDate {
         let randomTime = NSTimeInterval(arc4random_uniform(UInt32.max))
         return NSDate(timeIntervalSince1970: randomTime)
@@ -56,12 +60,14 @@ extension NSDate {
 }
 
 extension CGFloat {
+    /// SwiftRandom extension
     static func random() -> CGFloat {
         return CGFloat(Float(arc4random()) / Float(UINT32_MAX))
     }
 }
 
 extension UIColor {
+    /// SwiftRandom extension
     static func random(randomAlpha: Bool = false) -> UIColor {
         let randomRed = CGFloat.random()
         let randomGreen = CGFloat.random()
@@ -72,16 +78,25 @@ extension UIColor {
 }
 
 extension Array {
-    /// Randoms extension
+    /// SwiftRandom extension
     func randomItem() -> Element {
         let index = Int(arc4random_uniform(UInt32(self.count)))
         return self[index]
     }
 }
 
+extension NSURL {
+    /// SwiftRandom extension
+    class func randomURL() -> NSURL {
+        return NSURL(string: Randoms.randomFakeURLString())!
+    }
+}
+
 struct Randoms {
     
-    // If you prefer all Random at one place
+    //==========================================================================================================
+    // MARK: - Object randoms
+    //==========================================================================================================
     
     static func randomInt(lower: Int = 0, _ upper: Int = 100) -> Int {
         return Int.random(lower, upper)
@@ -98,7 +113,7 @@ struct Randoms {
     static func randomDateWithinDaysBeforeToday(days: Int) -> NSDate {
         return NSDate.randomWithinDaysBeforeToday(days)
     }
-
+    
     static func randomDate() -> NSDate {
         return NSDate.random()
     }
@@ -111,10 +126,13 @@ struct Randoms {
         return UIColor.random(randomAlpha)
     }
     
+    static func randomNSURL() -> NSURL {
+        return NSURL.randomURL()
+    }
     
-    
-    // Fake Generator for placeholder or fake datasource (name conversation ...)
-    
+    //==========================================================================================================
+    // MARK: - Fake random data generators
+    //==========================================================================================================
     
     static func randomFakeName() -> String {
         let firstNameList = ["Henry", "William", "Geoffrey", "Jim", "Yvonne", "Jamie", "Leticia", "Priscilla", "Sidney", "Nancy", "Edmund", "Bill", "Megan"]
@@ -132,7 +150,7 @@ struct Randoms {
     }
     
     static func randomFakeTitle() -> String {
-        let titleList = ["CEO of Google", "CEO of Facebook", "VP of Marketing @Uber", "Business Developer at IBM", "Jungler @ Fanatic", "B2 Pilot @ USAF"]
+        let titleList = ["CEO of Google", "CEO of Facebook", "VP of Marketing @Uber", "Business Developer at IBM", "Jungler @ Fanatic", "B2 Pilot @ USAF", "Student at Stanford", "Student at Harvard", "Mayor of Raccoon City", "CTO @ Umbrella Corporation", "Professor at Pallet Town University"]
         return titleList.randomItem()
     }
     
@@ -150,5 +168,10 @@ struct Randoms {
         let englishHonorific = randomEnglishHonorific()
         let name = randomFakeName()
         return englishHonorific + " " + name
+    }
+    
+    static func randomFakeURLString() -> String {
+        let urlList = ["http://www.google.com", "http://leagueoflegends.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/gag/6715049", "http://imgur.com/gallery/s9zoqs9", "https://www.youtube.com/watch?v=uelHwf8o7_U"]
+        return urlList.randomItem()
     }
 }
