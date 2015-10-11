@@ -9,23 +9,23 @@ import UIKit
 
 // each type has its own random
 
-extension Int {
+public extension Int {
     /// SwiftRandom extension
-    static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
+    public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
 }
 
-extension Bool {
+public extension Bool {
     /// SwiftRandom extension
-    static func random() -> Bool {
+    public static func random() -> Bool {
         return Int.random() % 2 == 0
     }
 }
 
-extension NSDate {
+public extension NSDate {
     /// SwiftRandom extension
-    static func randomWithinDaysBeforeToday(days: Int) -> NSDate {
+    public static func randomWithinDaysBeforeToday(days: Int) -> NSDate {
         let today = NSDate()
         
         guard let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) else {
@@ -52,23 +52,23 @@ extension NSDate {
     }
     
     /// SwiftRandom extension
-    static func random() -> NSDate {
+    public static func random() -> NSDate {
         let randomTime = NSTimeInterval(arc4random_uniform(UInt32.max))
         return NSDate(timeIntervalSince1970: randomTime)
     }
     
 }
 
-extension CGFloat {
+public extension CGFloat {
     /// SwiftRandom extension
-    static func random() -> CGFloat {
+    public static func random() -> CGFloat {
         return CGFloat(Float(arc4random()) / Float(UINT32_MAX))
     }
 }
 
-extension UIColor {
+public extension UIColor {
     /// SwiftRandom extension
-    static func random(randomAlpha: Bool = false) -> UIColor {
+    public static func random(randomAlpha: Bool = false) -> UIColor {
         let randomRed = CGFloat.random()
         let randomGreen = CGFloat.random()
         let randomBlue = CGFloat.random()
@@ -77,56 +77,56 @@ extension UIColor {
     }
 }
 
-extension Array {
+public extension Array {
     /// SwiftRandom extension
-    func randomItem() -> Element {
+    public func randomItem() -> Element {
         let index = Int(arc4random_uniform(UInt32(self.count)))
         return self[index]
     }
 }
 
-extension NSURL {
+public extension NSURL {
     /// SwiftRandom extension
-    class func randomURL() -> NSURL {
+    public static func randomURL() -> NSURL {
         return NSURL(string: Randoms.randomFakeURLString())!
     }
 }
 
-struct Randoms {
+public struct Randoms {
     
     //==========================================================================================================
     // MARK: - Object randoms
     //==========================================================================================================
     
-    static func randomInt(lower: Int = 0, _ upper: Int = 100) -> Int {
+    public static func randomInt(lower: Int = 0, _ upper: Int = 100) -> Int {
         return Int.random(lower, upper)
     }
     
-    static func randomPercentageisOver(percentage: Int) -> Bool {
+    public static func randomPercentageisOver(percentage: Int) -> Bool {
         return Int.random() > percentage
     }
     
-    static func randomBool() -> Bool {
+    public static func randomBool() -> Bool {
         return Bool.random()
     }
     
-    static func randomDateWithinDaysBeforeToday(days: Int) -> NSDate {
+    public static func randomDateWithinDaysBeforeToday(days: Int) -> NSDate {
         return NSDate.randomWithinDaysBeforeToday(days)
     }
     
-    static func randomDate() -> NSDate {
+    public static func randomDate() -> NSDate {
         return NSDate.random()
     }
     
-    static func randomCGFloat() -> CGFloat {
+    public static func randomCGFloat() -> CGFloat {
         return CGFloat.random()
     }
     
-    static func randomColor(randomAlpha: Bool = false) -> UIColor {
+    public static func randomColor(randomAlpha: Bool = false) -> UIColor {
         return UIColor.random(randomAlpha)
     }
     
-    static func randomNSURL() -> NSURL {
+    public static func randomNSURL() -> NSURL {
         return NSURL.randomURL()
     }
     
@@ -134,43 +134,43 @@ struct Randoms {
     // MARK: - Fake random data generators
     //==========================================================================================================
     
-    static func randomFakeName() -> String {
+    public static func randomFakeName() -> String {
         let firstNameList = ["Henry", "William", "Geoffrey", "Jim", "Yvonne", "Jamie", "Leticia", "Priscilla", "Sidney", "Nancy", "Edmund", "Bill", "Megan"]
         let lastNameList = ["Pearson", "Adams", "Cole", "Francis", "Andrews", "Casey", "Gross", "Lane", "Thomas", "Patrick", "Strickland", "Nicolas", "Freeman"]
         return firstNameList.randomItem() + " " + lastNameList.randomItem()
     }
     
-    static func randomFakeGender() -> String {
+    public static func randomFakeGender() -> String {
         return Bool.random() ? "Male" : "Female"
     }
     
-    static func randomFakeConversation() -> String {
+    public static func randomFakeConversation() -> String {
         let convoList = ["You embarrassed me this evening.","You don't think that was just lemonade in your glass, do you?","Do you ever think we should just stop doing this?","Why didn't he come and talk to me himself?","Promise me you'll look after your mother.","If you get me his phone, I might reconsider.","I think the room is bugged.","No! I'm tired of doing what you say.","For some reason, I'm attracted to you."]
         return convoList.randomItem()
     }
     
-    static func randomFakeTitle() -> String {
+    public static func randomFakeTitle() -> String {
         let titleList = ["CEO of Google", "CEO of Facebook", "VP of Marketing @Uber", "Business Developer at IBM", "Jungler @ Fanatic", "B2 Pilot @ USAF", "Student at Stanford", "Student at Harvard", "Mayor of Raccoon City", "CTO @ Umbrella Corporation", "Professor at Pallet Town University"]
         return titleList.randomItem()
     }
     
-    static func randomFakeTag() -> String {
+    public static func randomFakeTag() -> String {
         let tagList = ["meta", "forum", "troll", "meme", "question", "important", "like4like", "f4f"]
         return tagList.randomItem()
     }
     
-    static func randomEnglishHonorific() -> String {
+    public static func randomEnglishHonorific() -> String {
         let englishHonorificsList = ["Mr.", "Ms.", "Dr.", "Mrs.", "Mz.", "Mx.", "Prof."]
         return englishHonorificsList.randomItem()
     }
     
-    static func randomFakeNameAndEnglishHonorific() -> String {
+    public static func randomFakeNameAndEnglishHonorific() -> String {
         let englishHonorific = randomEnglishHonorific()
         let name = randomFakeName()
         return englishHonorific + " " + name
     }
     
-    static func randomFakeURLString() -> String {
+    public static func randomFakeURLString() -> String {
         let urlList = ["http://www.google.com", "http://leagueoflegends.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/gag/6715049", "http://imgur.com/gallery/s9zoqs9", "https://www.youtube.com/watch?v=uelHwf8o7_U"]
         return urlList.randomItem()
     }

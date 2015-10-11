@@ -1,14 +1,31 @@
 SwiftRandom
 ==============
+
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 SwiftRandom is a tiny help suite for generating random data such as 
 * Random human stuff like: names, gender, titles, tags, conversations
 * Random data types like: Int, CGFloat, Bool, UIColor, NSDate, NSURL, element in Array
 
-### Installation
+## Installation
+
+### Install via [Carthage](https://github.com/Carthage/Carthage)
+
+* Create a `Cartfile` with the following specification and run `carthage update`. (It has to specify a branch name since this project does not have a tagged version yet.)
+
+  ```
+  github "thellimist/SwiftRandom" "master"
+  ```
+
+* Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
+
+### Install Manually
+
 - Download and drop 'Randoms.swift' in your project.
 
-### Usage
-```
+## Usage
+
+```swift
 func asExtension() {
 	Int.random()
 	CGFloat.random()
@@ -18,7 +35,7 @@ func asExtension() {
 }
 ```
 
-```
+```swift
 func asMethods() {
 	// Return random Int >= 10 and <= 20
 	// Example Output: 13
