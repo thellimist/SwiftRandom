@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B537B0CA1BCA9E3E005725CE"
+            BuildableName = "SwiftRandom.framework"
+            BlueprintName = "SwiftRandom-iOS"
+            ReferencedContainer = "container:SwiftRandom.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

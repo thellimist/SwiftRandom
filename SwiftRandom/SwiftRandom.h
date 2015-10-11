@@ -5,7 +5,7 @@
 //  Created by Ben on 11/10/2015.
 //
 
-@import Foundation;
+@import UIKit;
 
 //! Project version number for SwiftRandom.
 FOUNDATION_EXPORT double SwiftRandomVersionNumber;

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		B537B0CF1BCA9E3F005725CE /* SwiftRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B58CCF471BCA9E870033D848 /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CCF461BCA9E870033D848 /* Randoms.swift */; settings = {ASSET_TAGS = (); }; };
-		B58CCF551BCAA1370033D848 /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CCF461BCA9E870033D848 /* Randoms.swift */; settings = {ASSET_TAGS = (); }; };
-		B58CCF561BCAA1460033D848 /* SwiftRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,18 +16,10 @@
 		B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRandom.h; sourceTree = "<group>"; };
 		B537B0D01BCA9E3F005725CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CCF461BCA9E870033D848 /* Randoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randoms.swift; sourceTree = SOURCE_ROOT; };
-		B58CCF4D1BCAA05B0033D848 /* SwiftRandom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRandom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B537B0C71BCA9E3E005725CE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B58CCF491BCAA05B0033D848 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */,
-				B58CCF4D1BCAA05B0033D848 /* SwiftRandom.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,14 +66,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B58CCF4A1BCAA05B0033D848 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B58CCF561BCAA1460033D848 /* SwiftRandom.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -106,24 +87,6 @@
 			productReference = B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B58CCF4C1BCAA05B0033D848 /* SwiftRandom-OSX */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B58CCF541BCAA05B0033D848 /* Build configuration list for PBXNativeTarget "SwiftRandom-OSX" */;
-			buildPhases = (
-				B58CCF481BCAA05B0033D848 /* Sources */,
-				B58CCF491BCAA05B0033D848 /* Frameworks */,
-				B58CCF4A1BCAA05B0033D848 /* Headers */,
-				B58CCF4B1BCAA05B0033D848 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SwiftRandom-OSX";
-			productName = "SwiftRandom-OSX";
-			productReference = B58CCF4D1BCAA05B0033D848 /* SwiftRandom.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -134,9 +97,6 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					B537B0CA1BCA9E3E005725CE = {
-						CreatedOnToolsVersion = 7.0.1;
-					};
-					B58CCF4C1BCAA05B0033D848 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
@@ -154,20 +114,12 @@
 			projectRoot = "";
 			targets = (
 				B537B0CA1BCA9E3E005725CE /* SwiftRandom-iOS */,
-				B58CCF4C1BCAA05B0033D848 /* SwiftRandom-OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B537B0C91BCA9E3E005725CE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B58CCF4B1BCAA05B0033D848 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,14 +134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58CCF471BCA9E870033D848 /* Randoms.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B58CCF481BCAA05B0033D848 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B58CCF551BCAA1370033D848 /* Randoms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,46 +264,6 @@
 			};
 			name = Release;
 		};
-		B58CCF521BCAA05B0033D848 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SwiftRandom/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = thellimist.SwiftRandom;
-				PRODUCT_NAME = SwiftRandom;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B58CCF531BCAA05B0033D848 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SwiftRandom/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = thellimist.SwiftRandom;
-				PRODUCT_NAME = SwiftRandom;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -380,14 +284,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		B58CCF541BCAA05B0033D848 /* Build configuration list for PBXNativeTarget "SwiftRandom-OSX" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B58CCF521BCAA05B0033D848 /* Debug */,
-				B58CCF531BCAA05B0033D848 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
