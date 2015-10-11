@@ -5,7 +5,7 @@ SwiftRandom is a tiny help suite for generating random data such as
 * Random data types like: Int, CGFloat, Bool, UIColor, NSDate, NSURL, element in Array
 
 ### Installation
-Download and drop 'Randoms.swift' in your project.
+- Download and drop 'Randoms.swift' in your project.
 
 ### Usage
 ```
@@ -92,7 +92,7 @@ func asMethods() {
 - Random wildlife pictures (Should not include the image inside project, should load it from web when needed)
 
 ###License
-SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
+- SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
 
 ##Keywords
 random, swift, data, generator, faker, fake, 
