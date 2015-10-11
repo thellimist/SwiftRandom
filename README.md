@@ -1,18 +1,8 @@
 SwiftRandom
 ==============
 SwiftRandom is a tiny help suite for generating random data such as 
-* Random Names
-* Random Gender
-* Random Title
-* Random Tag
-* Random Int
-* Random CGFloat
-* Random Conversation
-* Random Bools
-* Random Color
-* Random Date before today
-* Random Date since 1970
-* Roll dice over a certain percentage
+* Random human stuff like: names, gender, titles, tags, conversations
+* Random data types like: Int, CGFloat, Bool, UIColor, NSDate, NSURL, element in Array
 
 ### Installation
 Download and drop 'Randoms.swift' in your project.
@@ -95,9 +85,14 @@ func asMethods() {
 - Swift version 2.0
 
 ###Improvement
-Feel free adding your own random data functions and sending pull requests.
+- Feel free adding your own random data functions and sending pull requests.
+
+#####Possible features:
+- Random profile image (Should not include the image inside project, should load it from web when needed)
+- Random wildlife pictures (Should not include the image inside project, should load it from web when needed)
 
 ###License
 SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
 
-
+##Keywords
+random, swift, data, generator, faker, fake, 
