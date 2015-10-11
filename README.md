@@ -7,22 +7,6 @@ SwiftRandom is a tiny help suite for generating random data such as
 * Random human stuff like: names, gender, titles, tags, conversations
 * Random data types like: Int, CGFloat, Bool, UIColor, NSDate, NSURL, element in Array
 
-## Installation
-
-### Install via [Carthage](https://github.com/Carthage/Carthage)
-
-* Create a `Cartfile` with the following specification and run `carthage update`. (It has to specify a branch name since this project does not have a tagged version yet.)
-
-  ```
-  github "thellimist/SwiftRandom" "master"
-  ```
-
-* Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
-
-### Install Manually
-
-- Download and drop 'Randoms.swift' in your project.
-
 ## Usage
 
 ```swift
@@ -32,6 +16,7 @@ func asExtension() {
 	NSDate.random()
 	NSDate.randomWithinDaysBeforeToday(7)
 	UIColor.random()
+	NSURL.random()
 }
 ```
 
@@ -65,11 +50,11 @@ func asMethods() {
 	// Example Output: UIDeviceRGBColorSpace 0.645737 0.126625 0.52535 1
 	Randoms.randomColor()
 
-	// ==================== Fake Generators for Fake Datasources ==================== //
+	// Return random NSURL
+	// Example Output: http://leagueoflegends.com/
+	Randoms.randomNSURL()
 
-	// Return random English honorific
-	// Example Output: "Dr."
-	Randoms.randomEnglishHonorific()
+	// ==================== Fake Generators for Fake Datasources ==================== //
 
 	// Return random name
 	// Example Output: "Megan Freeman"
@@ -99,7 +84,26 @@ func asMethods() {
 ```
 
 ###Requirements
+
 - Swift version 2.0
+
+
+## Installation
+
+### Install via [Carthage](https://github.com/Carthage/Carthage)
+
+* Create a `Cartfile` with the following specification and run `carthage update`. (It has to specify a branch name since this project does not have a tagged version yet.)
+
+  ```
+  github "thellimist/SwiftRandom" "master"
+  ```
+
+* Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
+
+### Install Manually
+
+- Download and drop 'Randoms.swift' in your project.
+
 
 ###Improvement
 - Feel free adding your own random data functions and sending pull requests.
