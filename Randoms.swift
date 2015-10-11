@@ -87,8 +87,9 @@ public extension Array {
 
 public extension NSURL {
     /// SwiftRandom extension
-    public static func randomURL() -> NSURL {
-        return NSURL(string: Randoms.randomFakeURLString())!
+    public static func random() -> NSURL {
+        let urlList = ["http://www.google.com", "http://leagueoflegends.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/gag/6715049", "http://imgur.com/gallery/s9zoqs9", "https://www.youtube.com/watch?v=uelHwf8o7_U"]
+        return NSURL(string: urlList.randomItem())!
     }
 }
 
@@ -127,7 +128,7 @@ public struct Randoms {
     }
     
     public static func randomNSURL() -> NSURL {
-        return NSURL.randomURL()
+        return NSURL.random()
     }
     
     //==========================================================================================================
@@ -159,7 +160,7 @@ public struct Randoms {
         return tagList.randomItem()
     }
     
-    public static func randomEnglishHonorific() -> String {
+    private static func randomEnglishHonorific() -> String {
         let englishHonorificsList = ["Mr.", "Ms.", "Dr.", "Mrs.", "Mz.", "Mx.", "Prof."]
         return englishHonorificsList.randomItem()
     }
@@ -170,8 +171,4 @@ public struct Randoms {
         return englishHonorific + " " + name
     }
     
-    public static func randomFakeURLString() -> String {
-        let urlList = ["http://www.google.com", "http://leagueoflegends.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/gag/6715049", "http://imgur.com/gallery/s9zoqs9", "https://www.youtube.com/watch?v=uelHwf8o7_U"]
-        return urlList.randomItem()
-    }
 }
