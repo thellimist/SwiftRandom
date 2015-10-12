@@ -113,8 +113,12 @@ github "thellimist/SwiftRandom" "master"
 
 ### Install via CocoaPods
 
-```
-pod 'SwiftRandom'
+You can use [Cocoapods](http://cocoapods.org/) to install `SwiftRandom` by adding it to your `Podfile`:
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+pod  'SwiftRandom'
 ```
 
 ### Install Manually
