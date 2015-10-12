@@ -102,7 +102,7 @@ public extension Array {
 public extension NSURL {
     /// SwiftRandom extension
     public static func random() -> NSURL {
-        let urlList = ["http://www.google.com", "http://leagueoflegends.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/gag/6715049", "http://imgur.com/gallery/s9zoqs9", "https://www.youtube.com/watch?v=uelHwf8o7_U"]
+        let urlList = ["http://www.google.com", "http://dota2.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/gag/6715049", "http://imgur.com/gallery/s9zoqs9", "https://www.youtube.com/watch?v=uelHwf8o7_U"]
         return NSURL(string: urlList.randomItem())!
     }
 }
