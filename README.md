@@ -2,8 +2,9 @@ SwiftRandom
 ==============
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SwiftRandom.svg)](https://img.shields.io/cocoapods/v/SwiftRandom.svg)
 
-SwiftRandom is a tiny help suite for generating random data such as 
+SwiftRandom is a tiny help suite for generating random data such as
 * Random human stuff like: names, gender, titles, tags, conversations
 * Random data types like: Int, CGFloat, Bool, UIColor, NSDate, NSURL, element in Array
 
@@ -26,20 +27,20 @@ func asExtension() {
 func asMethods() {
 	// Return random Int >= 10 and <= 20
 	// Example Output: 13
-	Randoms.randomInt(10,20) 
+	Randoms.randomInt(10,20)
 
 	// Return random Double >= 10 and <= 20
 	// Example Output: 11.511219042938
-	Randoms.randomDouble(10,20) 
-	
+	Randoms.randomDouble(10,20)
+
 	// Return random Float >= 10 and <= 20
 	// Example Output: 17.0361
-	Randoms.randomFloat(10,20) 
-	
+	Randoms.randomFloat(10,20)
+
 	// Return random CGFloat between 1 >= and >= 0
 	// Example Output: 0.622616
 	Randoms.randomCGFloat()
-	
+
 	// Return true 30%, false %70
 	// Example Output: false
 	Randoms.randomPercentageisOver(70)
@@ -48,7 +49,7 @@ func asMethods() {
 	// Example Output: false
 	Randoms.randomBool()
 
-	// Return random NSDate today > and > today - 7. 
+	// Return random NSDate today > and > today - 7.
 	// Example Output: 2015-10-08 03:55:09 +0000
 	Randoms.randomDateWithinDaysBeforeToday(7)
 
@@ -82,11 +83,11 @@ func asMethods() {
 	// Example Output: "No! I'm tired of doing what you say."
 	Randoms.randomFakeConversation()
 
-	// Return random title 
+	// Return random title
 	// Example Output: "B2 Pilot @ USAF"
 	Randoms.randomFakeTitle()
 
-	// Return random tag as string 
+	// Return random tag as string
 	// Example Output: "question"
 	Randoms.randomFakeTag()
 }
@@ -100,15 +101,21 @@ func asMethods() {
 
 ## Installation
 
-### Install via [Carthage](https://github.com/Carthage/Carthage)
+### Install via Carthage
 
 * Create a `Cartfile` with the following specification and run `carthage update`. (It has to specify a branch name since this project does not have a tagged version yet.)
 
-  ```
-  github "thellimist/SwiftRandom" "master"
-  ```
+```
+github "thellimist/SwiftRandom" "master"
+```
 
 * Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
+
+### Install via CocoaPods
+
+```
+pod 'SwiftRandom'
+```
 
 ### Install Manually
 
@@ -127,4 +134,4 @@ func asMethods() {
 - SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
 
 ##Keywords
-random, swift, data, generator, faker, fake, 
+random, swift, data, generator, faker, fake,
