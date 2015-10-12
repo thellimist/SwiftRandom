@@ -23,6 +23,20 @@ public extension Int {
     }
 }
 
+public extension Double {
+    /// SwiftRandom extension
+    public static func random(lower: Double = 0, _ upper: Double = 100) -> Double {
+        return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+    }
+}
+
+public extension Float {
+    /// SwiftRandom extension
+    public static func random(lower: Float = 0, _ upper: Float = 100) -> Float {
+        return (Float(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+    }
+}
+
 public extension CGFloat {
     /// SwiftRandom extension
     public static func random(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
@@ -109,6 +123,14 @@ public struct Randoms {
     
     public static func randomPercentageisOver(percentage: Int) -> Bool {
         return Int.random() > percentage
+    }
+    
+    public static func randomDouble(lower: Double = 0, _ upper: Double = 100) -> Double {
+        return Double.random(lower, upper)
+    }
+    
+    public static func randomFloat(lower: Float = 0, _ upper: Float = 100) -> Float {
+        return Float.random(lower, upper)
     }
     
     public static func randomCGFloat(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
