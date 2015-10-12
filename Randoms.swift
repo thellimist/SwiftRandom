@@ -9,6 +9,13 @@ import UIKit
 
 // each type has its own random
 
+public extension Bool {
+    /// SwiftRandom extension
+    public static func random() -> Bool {
+        return Int.random() % 2 == 0
+    }
+}
+
 public extension Int {
     /// SwiftRandom extension
     public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
@@ -16,10 +23,10 @@ public extension Int {
     }
 }
 
-public extension Bool {
+public extension CGFloat {
     /// SwiftRandom extension
-    public static func random() -> Bool {
-        return Int.random() % 2 == 0
+    public static func random(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
+        return CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * (upper - lower) + lower
     }
 }
 
@@ -59,13 +66,6 @@ public extension NSDate {
     
 }
 
-public extension CGFloat {
-    /// SwiftRandom extension
-    public static func random() -> CGFloat {
-        return CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-    }
-}
-
 public extension UIColor {
     /// SwiftRandom extension
     public static func random(randomAlpha: Bool = false) -> UIColor {
@@ -99,6 +99,10 @@ public struct Randoms {
     // MARK: - Object randoms
     //==========================================================================================================
     
+    public static func randomBool() -> Bool {
+        return Bool.random()
+    }
+    
     public static func randomInt(lower: Int = 0, _ upper: Int = 100) -> Int {
         return Int.random(lower, upper)
     }
@@ -107,8 +111,8 @@ public struct Randoms {
         return Int.random() > percentage
     }
     
-    public static func randomBool() -> Bool {
-        return Bool.random()
+    public static func randomCGFloat(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
+        return CGFloat.random(lower, upper)
     }
     
     public static func randomDateWithinDaysBeforeToday(days: Int) -> NSDate {
@@ -117,10 +121,6 @@ public struct Randoms {
     
     public static func randomDate() -> NSDate {
         return NSDate.random()
-    }
-    
-    public static func randomCGFloat() -> CGFloat {
-        return CGFloat.random()
     }
     
     public static func randomColor(randomAlpha: Bool = false) -> UIColor {
