@@ -121,6 +121,7 @@ func asMethods() {
 #####Possible features:
 - Random profile image (Should not include the image inside project, should load it from web when needed)
 - Random wildlife pictures (Should not include the image inside project, should load it from web when needed)
+- Make OSX compatiable and add here: https://github.com/AndrewSB/awesome-osx
 
 ###License
 - SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
