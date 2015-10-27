@@ -107,6 +107,7 @@ public extension NSURL {
     }
 }
 
+
 public struct Randoms {
     
     //==========================================================================================================
@@ -199,4 +200,30 @@ public struct Randoms {
         return cityPrefixes.randomItem() + citySuffixes.randomItem()
     }
     
+    public enum GravatarStyle: String {
+        case Standard
+        case MM
+        case Identicon
+        case Monsterid
+        case Wavatar
+        case Retro
+    }
+    
+    public static func randomGravatar(style: Randoms.GravatarStyle = .Standard, size: Int = 80, completion: ((image: UIImage?, error: NSError?) -> Void)?) {
+        var url = "https://secure.gravatar.com/avatar/thisimagewillnotbefound?s=\(size)"
+        if style != .Standard {
+            url += "&d=\(style.rawValue.lowercaseString)"
+        }
+        
+        let request = NSURLRequest(URL: NSURL(string: url)!, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5.0)
+        let session = NSURLSession.sharedSession()
+        
+        session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
+            if error == nil {
+                completion?(image: UIImage(data: data!), error: nil)
+            } else {
+                completion?(image: nil, error: error)
+            }
+        }).resume()
+    }
 }
