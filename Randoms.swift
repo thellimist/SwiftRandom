@@ -210,4 +210,10 @@ public struct Randoms {
         return englishHonorific + " " + name
     }
     
+    public static func randomFakeCity() -> String {
+        let cityPrefixes = ["North", "East", "West", "South", "New", "Lake", "Port"]
+        let citySuffixes = ["town", "ton", "land", "ville", "berg", "burgh", "borough", "bury", "view", "port", "mouth", "stad", "furt", "chester", "mouth", "fort", "haven", "side", "shire"]
+        return cityPrefixes.randomItem() + citySuffixes.randomItem()
+    }
+    
 }
