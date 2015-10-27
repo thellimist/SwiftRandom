@@ -18,6 +18,11 @@ public extension Bool {
 
 public extension Int {
     /// SwiftRandom extension
+    public static func random(range: Range<Int>) -> Int {
+        return range.startIndex + Int(arc4random_uniform(UInt32(range.endIndex - range.startIndex)))
+    }
+    
+    /// SwiftRandom extension
     public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
@@ -99,6 +104,14 @@ public extension Array {
     }
 }
 
+public extension ArraySlice {
+    /// SwiftRandom extension
+    public func randomItem() -> Element {
+        let index = Int.random(self.startIndex..<self.endIndex)
+        return self[index]
+    }
+}
+
 public extension NSURL {
     /// SwiftRandom extension
     public static func random() -> NSURL {
@@ -115,6 +128,10 @@ public struct Randoms {
     
     public static func randomBool() -> Bool {
         return Bool.random()
+    }
+    
+    public static func randomInt(range: Range<Int>) -> Int {
+        return Int.random(range.startIndex, range.endIndex)
     }
     
     public static func randomInt(lower: Int = 0, _ upper: Int = 100) -> Int {
