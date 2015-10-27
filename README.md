@@ -13,6 +13,7 @@ SwiftRandom is a tiny help suite for generating random data such as
 ```swift
 func asExtension() {
 	Int.random(2, 77) // Random between 2-77
+	Int.random(2...77)
 	Double.random()
 	Float.random(3.2, 4.5) // Random between 3.2-4.5
 	CGFloat.random()
@@ -20,6 +21,11 @@ func asExtension() {
 	NSDate.randomWithinDaysBeforeToday(7)
 	UIColor.random()
 	NSURL.random()
+	
+	// Array Extensions
+	var someArray = ["hello", "world"]
+	someArray[0..<someArray.count].randomItem() // Array slice
+	someArray.randomItem()
 }
 ```
 
