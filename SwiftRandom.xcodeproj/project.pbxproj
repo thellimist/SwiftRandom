@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B537B0CF1BCA9E3F005725CE /* SwiftRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B58CCF471BCA9E870033D848 /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CCF461BCA9E870033D848 /* Randoms.swift */; settings = {ASSET_TAGS = (); }; };
+		B58CCF471BCA9E870033D848 /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CCF461BCA9E870033D848 /* Randoms.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
