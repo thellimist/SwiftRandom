@@ -204,9 +204,11 @@ public struct Randoms {
         case Standard
         case MM
         case Identicon
-        case Monsterid
+        case MonsterID
         case Wavatar
         case Retro
+        
+        static let allValues = [Standard, MM, Identicon, MonsterID, Wavatar, Retro]
     }
     
     public static func randomGravatar(style: Randoms.GravatarStyle = .Standard, size: Int = 80, completion: ((image: UIImage?, error: NSError?) -> Void)?) {
@@ -219,11 +221,20 @@ public struct Randoms {
         let session = NSURLSession.sharedSession()
         
         session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
-            if error == nil {
-                completion?(image: UIImage(data: data!), error: nil)
-            } else {
-                completion?(image: nil, error: error)
+            dispatch_async(dispatch_get_main_queue()) {
+                if error == nil {
+                    completion?(image: UIImage(data: data!), error: nil)
+                } else {
+                    completion?(image: nil, error: error)
+                }
             }
         }).resume()
+    }
+    
+    public static func randomGravatar(size: Int = 80, completion: ((image: UIImage?, error: NSError?) -> Void)?) {
+        let options = Randoms.GravatarStyle.allValues
+        let index = Randoms.randomInt(0, options.count - 1)
+
+        Randoms.randomGravatar(options[index], size: size, completion: completion)
     }
 }
