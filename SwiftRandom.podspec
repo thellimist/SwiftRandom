@@ -2,13 +2,14 @@
 # change s.version
 # pod lib lint SwiftRandom.podspec
 # git tag <New Tag>
+# git add & git commit
 # git push
 # pod spec lint SwiftRandom.podspec
 # pod trunk push SwiftRandom.podspec
 
 Pod::Spec.new do |s|
 s.name             = "SwiftRandom"
-s.version          = "0.1.6"
+s.version          = "0.1.7"
 s.summary          = "A tiny generator of random data for swift"
 s.description      = "A tiny generator of fake/random data for swift"
 s.homepage         = "https://github.com/thellimist/SwiftRandom"
