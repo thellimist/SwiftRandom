@@ -96,6 +96,12 @@ func asMethods() {
 	// Return random tag as string
 	// Example Output: "question"
 	Randoms.randomFakeTag()
+	
+	// Return random (non-existing) gravatar as UIImage?
+	// The image is optional in case of network issues
+	Randoms.randomGravatar() { (image, error) in 
+		// Handle the image/error
+	}
 }
 
 ```
@@ -136,7 +142,6 @@ pod  'SwiftRandom'
 - Feel free adding your own random data functions and sending pull requests.
 
 #####Possible features:
-- Random profile image (Should not include the image inside project, should load it from web when needed)
 - Random wildlife pictures (Should not include the image inside project, should load it from web when needed)
 - Make OSX compatiable and add here: https://github.com/AndrewSB/awesome-osx
 - Random JSON
@@ -145,4 +150,4 @@ pod  'SwiftRandom'
 - SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
 
 ##Keywords
-random, swift, data, generator, faker, fake,
+random, swift, data, generator, faker, fake, gravatar
