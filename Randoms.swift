@@ -228,7 +228,7 @@ public struct Randoms {
         static let allValues = [Standard, MM, Identicon, MonsterID, Wavatar, Retro]
     }
     
-    public static func randomGravatar(style: Randoms.GravatarStyle = .Standard, size: Int = 80, completion: ((image: UIImage?, error: NSError?) -> Void)?) {
+    public static func createGravatar(style: Randoms.GravatarStyle = .Standard, size: Int = 80, completion: ((image: UIImage?, error: NSError?) -> Void)?) {
         var url = "https://secure.gravatar.com/avatar/thisimagewillnotbefound?s=\(size)"
         if style != .Standard {
             url += "&d=\(style.rawValue.lowercaseString)"
@@ -250,8 +250,6 @@ public struct Randoms {
     
     public static func randomGravatar(size: Int = 80, completion: ((image: UIImage?, error: NSError?) -> Void)?) {
         let options = Randoms.GravatarStyle.allValues
-        let index = Randoms.randomInt(0, options.count - 1)
-
-        Randoms.randomGravatar(options[index], size: size, completion: completion)
+        Randoms.createGravatar(options.randomItem(), size: size, completion: completion)
     }
 }
