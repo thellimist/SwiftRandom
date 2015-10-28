@@ -99,7 +99,12 @@ func asMethods() {
 	
 	// Return random (non-existing) gravatar as UIImage?
 	// The image is optional in case of network issues
-	Randoms.randomGravatar() { (image, error) in 
+	Randoms.randomGravatar { (image, error) -> Void in
+		// Handle the image/error
+	}
+	
+	// For consistance behaviour you can create custom Gravatar
+	Randoms.createGravatar(Randoms.GravatarStyle.Retro) { (image, error) -> Void in
 		// Handle the image/error
 	}
 }
