@@ -1,4 +1,5 @@
 # Check list
+# git pull
 # change s.version
 # pod lib lint SwiftRandom.podspec
 # git tag <New Tag>
