@@ -13,6 +13,7 @@ SwiftRandom is a tiny help suite for generating random data such as
 ```swift
 func asExtension() {
 	Int.random(2, 77) // Random between 2-77
+	Int.random(2...77)
 	Double.random()
 	Float.random(3.2, 4.5) // Random between 3.2-4.5
 	CGFloat.random()
@@ -20,6 +21,11 @@ func asExtension() {
 	NSDate.randomWithinDaysBeforeToday(7)
 	UIColor.random()
 	NSURL.random()
+	
+	// Array Extensions
+	var someArray = ["hello", "world"]
+	someArray[0..<someArray.count].randomItem() // Array slice
+	someArray.randomItem()
 }
 ```
 
@@ -90,6 +96,17 @@ func asMethods() {
 	// Return random tag as string
 	// Example Output: "question"
 	Randoms.randomFakeTag()
+	
+	// Return random (non-existing) gravatar as UIImage?
+	// The image is optional in case of network issues
+	Randoms.randomGravatar { (image, error) -> Void in
+		// Handle the image/error
+	}
+	
+	// For consistance behaviour you can create custom Gravatar
+	Randoms.createGravatar(Randoms.GravatarStyle.Retro) { (image, error) -> Void in
+		// Handle the image/error
+	}
 }
 
 ```
@@ -130,7 +147,6 @@ pod  'SwiftRandom'
 - Feel free adding your own random data functions and sending pull requests.
 
 #####Possible features:
-- Random profile image (Should not include the image inside project, should load it from web when needed)
 - Random wildlife pictures (Should not include the image inside project, should load it from web when needed)
 - Make OSX compatiable and add here: https://github.com/AndrewSB/awesome-osx
 - Random JSON
@@ -139,4 +155,4 @@ pod  'SwiftRandom'
 - SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
 
 ##Keywords
-random, swift, data, generator, faker, fake,
+random, swift, data, generator, faker, fake, gravatar
