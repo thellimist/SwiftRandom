@@ -1,12 +1,5 @@
 # Check list
-# git pull
-# change s.version
-# pod lib lint SwiftRandom.podspec
-# git tag <New Tag>
-# git add & git commit
-# git push
-# pod spec lint SwiftRandom.podspec
-# pod trunk push SwiftRandom.podspec
+# https://github.com/thellimist/EZPods
 
 Pod::Spec.new do |s|
 s.name             = "SwiftRandom"
