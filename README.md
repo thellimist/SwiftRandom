@@ -152,6 +152,7 @@ pod  'SwiftRandom'
 - Random JSON
 - Random Gifs (Should not include gifs inside the project, should load it from web when needed)
 - Random Videos (Should not include videos inside the project, should load it from web when needed)
+- Implement `SwiftRandom` as a protocol any class can conform to (`Post.random()` would give you a random post)
 
 ###License
 - SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
