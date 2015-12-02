@@ -120,10 +120,10 @@ func asMethods() {
 
 ### Install via Carthage
 
-* Create a `Cartfile` with the following specification and run `carthage update`. (It has to specify a branch name since this project does not have a tagged version yet.)
+* Create a `Cartfile` with the following specification and run `carthage update`.
 
 ```
-github "thellimist/SwiftRandom" "master"
+github "thellimist/SwiftRandom" >= 0.1.7
 ```
 
 * Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
