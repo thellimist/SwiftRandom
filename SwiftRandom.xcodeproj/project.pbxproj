@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B526C3861C15D98F00BF5B0F /* SwiftRandomSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526C3851C15D98F00BF5B0F /* SwiftRandomSpec.swift */; };
+		B526C3861C15D98F00BF5B0F /* SwiftRandomIntSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526C3851C15D98F00BF5B0F /* SwiftRandomIntSpec.swift */; };
 		B537B0CF1BCA9E3F005725CE /* SwiftRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B55CF9C11C15D0DA00EDC8F0 /* SwiftRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */; };
 		B55CF9C91C15D1CD00EDC8F0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55CF9C71C15D1CD00EDC8F0 /* Nimble.framework */; };
@@ -26,7 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B526C3851C15D98F00BF5B0F /* SwiftRandomSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRandomSpec.swift; sourceTree = "<group>"; };
+		B526C3851C15D98F00BF5B0F /* SwiftRandomIntSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRandomIntSpec.swift; sourceTree = "<group>"; };
 		B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRandom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRandom.h; sourceTree = "<group>"; };
 		B537B0D01BCA9E3F005725CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				B55CF9C01C15D0DA00EDC8F0 /* Info.plist */,
-				B526C3851C15D98F00BF5B0F /* SwiftRandomSpec.swift */,
+				B526C3851C15D98F00BF5B0F /* SwiftRandomIntSpec.swift */,
 			);
 			path = SwiftRandomTests;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B526C3861C15D98F00BF5B0F /* SwiftRandomSpec.swift in Sources */,
+				B526C3861C15D98F00BF5B0F /* SwiftRandomIntSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
