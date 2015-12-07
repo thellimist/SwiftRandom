@@ -216,6 +216,12 @@ public struct Randoms {
         let citySuffixes = ["town", "ton", "land", "ville", "berg", "burgh", "borough", "bury", "view", "port", "mouth", "stad", "furt", "chester", "mouth", "fort", "haven", "side", "shire"]
         return cityPrefixes.randomItem() + citySuffixes.randomItem()
     }
+    
+    public static func randomCurrency() -> String {
+        let currencyList = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "ZAR", "NZD", "INR", "BRP", "CNY", "EGP", "KRW", "MXN", "SAR", "SGD",]
+        
+        return currencyList.randomItem()
+    }
 
     public enum GravatarStyle: String {
         case Standard
