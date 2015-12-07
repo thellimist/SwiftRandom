@@ -97,6 +97,10 @@ func asMethods() {
 	// Example Output: "question"
 	Randoms.randomFakeTag()
 	
+	// Return random currency as String
+	// Example Output: "EUR"
+	Randoms.randomCurrency()
+	
 	// Return random (non-existing) gravatar as UIImage?
 	// The image is optional in case of network issues
 	Randoms.randomGravatar { (image, error) -> Void in
