@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B526C3861C15D98F00BF5B0F /* SwiftRandomSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526C3851C15D98F00BF5B0F /* SwiftRandomSpec.swift */; };
 		B537B0CF1BCA9E3F005725CE /* SwiftRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B55CF9BF1C15D0D900EDC8F0 /* SwiftRandomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CF9BE1C15D0D900EDC8F0 /* SwiftRandomTests.swift */; };
 		B55CF9C11C15D0DA00EDC8F0 /* SwiftRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */; };
+		B55CF9C91C15D1CD00EDC8F0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55CF9C71C15D1CD00EDC8F0 /* Nimble.framework */; };
+		B55CF9CA1C15D1CD00EDC8F0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55CF9C81C15D1CD00EDC8F0 /* Quick.framework */; };
 		B58CCF471BCA9E870033D848 /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CCF461BCA9E870033D848 /* Randoms.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,12 +26,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B526C3851C15D98F00BF5B0F /* SwiftRandomSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRandomSpec.swift; sourceTree = "<group>"; };
 		B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRandom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRandom.h; sourceTree = "<group>"; };
 		B537B0D01BCA9E3F005725CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55CF9BC1C15D0D900EDC8F0 /* SwiftRandomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRandomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B55CF9BE1C15D0D900EDC8F0 /* SwiftRandomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRandomTests.swift; sourceTree = "<group>"; };
 		B55CF9C01C15D0DA00EDC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55CF9C71C15D1CD00EDC8F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		B55CF9C81C15D1CD00EDC8F0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		B58CCF461BCA9E870033D848 /* Randoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randoms.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -45,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55CF9C91C15D1CD00EDC8F0 /* Nimble.framework in Frameworks */,
+				B55CF9CA1C15D1CD00EDC8F0 /* Quick.framework in Frameworks */,
 				B55CF9C11C15D0DA00EDC8F0 /* SwiftRandom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +61,7 @@
 		B537B0C11BCA9E3E005725CE = {
 			isa = PBXGroup;
 			children = (
+				B55CF9CC1C15D25900EDC8F0 /* Frameworks */,
 				B537B0CC1BCA9E3E005725CE /* Products */,
 				B537B0CD1BCA9E3F005725CE /* SwiftRandom */,
 				B55CF9BD1C15D0D900EDC8F0 /* SwiftRandomTests */,
@@ -84,9 +91,18 @@
 			isa = PBXGroup;
 			children = (
 				B55CF9C01C15D0DA00EDC8F0 /* Info.plist */,
-				B55CF9BE1C15D0D900EDC8F0 /* SwiftRandomTests.swift */,
+				B526C3851C15D98F00BF5B0F /* SwiftRandomSpec.swift */,
 			);
 			path = SwiftRandomTests;
+			sourceTree = "<group>";
+		};
+		B55CF9CC1C15D25900EDC8F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B55CF9C71C15D1CD00EDC8F0 /* Nimble.framework */,
+				B55CF9C81C15D1CD00EDC8F0 /* Quick.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +144,7 @@
 				B55CF9B81C15D0D900EDC8F0 /* Sources */,
 				B55CF9B91C15D0D900EDC8F0 /* Frameworks */,
 				B55CF9BA1C15D0D900EDC8F0 /* Resources */,
+				B55CF9CB1C15D1E800EDC8F0 /* Copy Carthage Built Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +208,25 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B55CF9CB1C15D1E800EDC8F0 /* Copy Carthage Built Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+			);
+			name = "Copy Carthage Built Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B537B0C61BCA9E3E005725CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -204,7 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B55CF9BF1C15D0D900EDC8F0 /* SwiftRandomTests.swift in Sources */,
+				B526C3861C15D98F00BF5B0F /* SwiftRandomSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,17 +382,28 @@
 		B55CF9C41C15D0DA00EDC8F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftRandomTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thellimist.SwiftRandom.SwiftRandomTests;
 				PRODUCT_NAME = SwiftRandomTests;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B55CF9C51C15D0DA00EDC8F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftRandomTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -393,6 +440,7 @@
 				B55CF9C51C15D0DA00EDC8F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
