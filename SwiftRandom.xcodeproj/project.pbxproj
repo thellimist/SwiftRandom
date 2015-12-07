@@ -8,13 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		B537B0CF1BCA9E3F005725CE /* SwiftRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B55CF9BF1C15D0D900EDC8F0 /* SwiftRandomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CF9BE1C15D0D900EDC8F0 /* SwiftRandomTests.swift */; };
+		B55CF9C11C15D0DA00EDC8F0 /* SwiftRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */; };
 		B58CCF471BCA9E870033D848 /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CCF461BCA9E870033D848 /* Randoms.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B55CF9C21C15D0DA00EDC8F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B537B0C21BCA9E3E005725CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B537B0CA1BCA9E3E005725CE;
+			remoteInfo = "SwiftRandom-iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRandom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRandom.h; sourceTree = "<group>"; };
 		B537B0D01BCA9E3F005725CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55CF9BC1C15D0D900EDC8F0 /* SwiftRandomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRandomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B55CF9BE1C15D0D900EDC8F0 /* SwiftRandomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRandomTests.swift; sourceTree = "<group>"; };
+		B55CF9C01C15D0DA00EDC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CCF461BCA9E870033D848 /* Randoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randoms.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -26,6 +41,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B55CF9B91C15D0D900EDC8F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55CF9C11C15D0DA00EDC8F0 /* SwiftRandom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -34,6 +57,7 @@
 			children = (
 				B537B0CC1BCA9E3E005725CE /* Products */,
 				B537B0CD1BCA9E3F005725CE /* SwiftRandom */,
+				B55CF9BD1C15D0D900EDC8F0 /* SwiftRandomTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */,
+				B55CF9BC1C15D0D900EDC8F0 /* SwiftRandomTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +78,15 @@
 				B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */,
 			);
 			path = SwiftRandom;
+			sourceTree = "<group>";
+		};
+		B55CF9BD1C15D0D900EDC8F0 /* SwiftRandomTests */ = {
+			isa = PBXGroup;
+			children = (
+				B55CF9C01C15D0DA00EDC8F0 /* Info.plist */,
+				B55CF9BE1C15D0D900EDC8F0 /* SwiftRandomTests.swift */,
+			);
+			path = SwiftRandomTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,17 +121,38 @@
 			productReference = B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B55CF9BB1C15D0D900EDC8F0 /* SwiftRandomTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B55CF9C61C15D0DA00EDC8F0 /* Build configuration list for PBXNativeTarget "SwiftRandomTests-iOS" */;
+			buildPhases = (
+				B55CF9B81C15D0D900EDC8F0 /* Sources */,
+				B55CF9B91C15D0D900EDC8F0 /* Frameworks */,
+				B55CF9BA1C15D0D900EDC8F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B55CF9C31C15D0DA00EDC8F0 /* PBXTargetDependency */,
+			);
+			name = "SwiftRandomTests-iOS";
+			productName = SwiftRandomTests;
+			productReference = B55CF9BC1C15D0D900EDC8F0 /* SwiftRandomTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B537B0C21BCA9E3E005725CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					B537B0CA1BCA9E3E005725CE = {
 						CreatedOnToolsVersion = 7.0.1;
+					};
+					B55CF9BB1C15D0D900EDC8F0 = {
+						CreatedOnToolsVersion = 7.1;
 					};
 				};
 			};
@@ -114,12 +169,20 @@
 			projectRoot = "";
 			targets = (
 				B537B0CA1BCA9E3E005725CE /* SwiftRandom-iOS */,
+				B55CF9BB1C15D0D900EDC8F0 /* SwiftRandomTests-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B537B0C91BCA9E3E005725CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B55CF9BA1C15D0D900EDC8F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,7 +200,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B55CF9B81C15D0D900EDC8F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55CF9BF1C15D0D900EDC8F0 /* SwiftRandomTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B55CF9C31C15D0DA00EDC8F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B537B0CA1BCA9E3E005725CE /* SwiftRandom-iOS */;
+			targetProxy = B55CF9C21C15D0DA00EDC8F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B537B0D11BCA9E3F005725CE /* Debug */ = {
@@ -264,6 +343,28 @@
 			};
 			name = Release;
 		};
+		B55CF9C41C15D0DA00EDC8F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftRandomTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = thellimist.SwiftRandom.SwiftRandomTests;
+				PRODUCT_NAME = SwiftRandomTests;
+			};
+			name = Debug;
+		};
+		B55CF9C51C15D0DA00EDC8F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftRandomTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = thellimist.SwiftRandom.SwiftRandomTests;
+				PRODUCT_NAME = SwiftRandomTests;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +385,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B55CF9C61C15D0DA00EDC8F0 /* Build configuration list for PBXNativeTarget "SwiftRandomTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B55CF9C41C15D0DA00EDC8F0 /* Debug */,
+				B55CF9C51C15D0DA00EDC8F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
