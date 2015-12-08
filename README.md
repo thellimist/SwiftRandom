@@ -2,6 +2,7 @@ SwiftRandom
 ==============
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/thellimist/SwiftRandom.svg?branch=master)](https://travis-ci.org/thellimist/SwiftRandom)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SwiftRandom.svg)](https://img.shields.io/cocoapods/v/SwiftRandom.svg)
 
 SwiftRandom is a tiny help suite for generating random data such as
@@ -146,6 +147,19 @@ pod  'SwiftRandom'
 
 - Download and drop 'Randoms.swift' in your project.
 
+## Development
+
+### Install Dependencies
+
+```sh
+rake install
+```
+
+### Run Tests
+
+```sh
+rake test
+```
 
 ###Improvement
 - Feel free adding your own random data functions and sending pull requests.
