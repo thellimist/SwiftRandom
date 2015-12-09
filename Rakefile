@@ -4,10 +4,10 @@ task default: :install
 desc "Install dependencies"
 task :install do
   # Check Homebrew
-  if %x(which brew)
-    sh %Q(brew --version)
-  else
+  if %x(which brew).empty?
     sh %Q(ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
+  else
+    sh %Q(brew --version)
   end
 
   # Check Carthage
