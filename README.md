@@ -2,7 +2,7 @@ SwiftRandom
 ==============
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SwiftRandom.svg)](https://img.shields.io/cocoapods/v/SwiftRandom.svg)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftRandom.svg)](https://img.shields.io/cocoapods/v/SwiftRandom.svg)
 
 SwiftRandom is a tiny help suite for generating random data such as
 * Random human stuff like: names, gender, titles, tags, conversations
@@ -134,7 +134,7 @@ github "thellimist/SwiftRandom" >= 0.1.7
 
 ### Install via CocoaPods
 
-You can use [Cocoapods](http://cocoapods.org/) to install `SwiftRandom` by adding it to your `Podfile`:
+You can use [CocoaPods](http://cocoapods.org/) to install `SwiftRandom` by adding it to your `Podfile`:
 ```ruby
 platform :ios, '8.0'
 use_frameworks!
