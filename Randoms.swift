@@ -19,12 +19,27 @@ public extension Bool {
 public extension Int {
     /// SwiftRandom extension
     public static func random(range: Range<Int>) -> Int {
-        return range.startIndex + Int(arc4random_uniform(UInt32(range.endIndex - range.startIndex)))
+        return random(range.endIndex, range.startIndex)
     }
 
     /// SwiftRandom extension
     public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+    }
+}
+
+public extension Int32 {
+    /// SwiftRandom extension
+    public static func random(range: Range<Int>) -> Int32 {
+        return random(range.endIndex, range.startIndex)
+    }
+
+    /// SwiftRandom extension
+    ///
+    /// - note: Using `Int` as parameter type as we usually just want to write `Int32.random(13, 37)` and not `Int32.random(Int32(13), Int32(37))`
+    public static func random(lower: Int = 0, _ upper: Int = 100) -> Int32 {
+        let r = arc4random_uniform(UInt32(Int64(upper) - Int64(lower)))
+        return Int32(Int64(r) + Int64(lower))
     }
 }
 
@@ -132,11 +147,19 @@ public struct Randoms {
     }
 
     public static func randomInt(range: Range<Int>) -> Int {
-        return Int.random(range.startIndex, range.endIndex)
+        return Int.random(range)
     }
 
     public static func randomInt(lower: Int = 0, _ upper: Int = 100) -> Int {
         return Int.random(lower, upper)
+    }
+
+    public static func randomInt32(range: Range<Int>) -> Int32 {
+        return Int32.random(range)
+    }
+
+    public static func randomInt32(lower: Int = 0, _ upper: Int = 100) -> Int32{
+        return Int32.random(lower, upper)
     }
 
     public static func randomPercentageisOver(percentage: Int) -> Bool {
