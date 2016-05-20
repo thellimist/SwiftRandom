@@ -76,8 +76,8 @@ public extension NSDate {
 
         let r1 = arc4random_uniform(UInt32(days))
         let r2 = arc4random_uniform(UInt32(23))
-        let r3 = arc4random_uniform(UInt32(23))
-        let r4 = arc4random_uniform(UInt32(23))
+        let r3 = arc4random_uniform(UInt32(59))
+        let r4 = arc4random_uniform(UInt32(59))
 
         let offsetComponents = NSDateComponents()
         offsetComponents.day = Int(r1) * -1
