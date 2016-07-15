@@ -19,7 +19,7 @@ public extension Bool {
 public extension Int {
     /// SwiftRandom extension
     public static func random(range: Range<Int>) -> Int {
-        return random(range.endIndex, range.startIndex)
+        return random(range.upperBound, lower: range.lowerBound)
     }
 
     /// SwiftRandom extension
@@ -31,7 +31,7 @@ public extension Int {
 public extension Int32 {
     /// SwiftRandom extension
     public static func random(range: Range<Int>) -> Int32 {
-        return random(range.endIndex, range.startIndex)
+        return random(range.upperBound, lower: range.lowerBound)
     }
 
     /// SwiftRandom extension
@@ -69,7 +69,7 @@ public extension NSDate {
     public static func randomWithinDaysBeforeToday(days: Int) -> NSDate {
         let today = NSDate()
 
-        guard let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) else {
+        guard let gregorian = Calendar(calendarIdentifier: Calendar.Identifier.gregorian) else {
             print("no calendar \"NSCalendarIdentifierGregorian\" found")
             return today
         }
@@ -85,7 +85,7 @@ public extension NSDate {
         offsetComponents.minute = Int(r3)
         offsetComponents.second = Int(r4)
 
-        guard let rndDate1 = gregorian.dateByAddingComponents(offsetComponents, toDate: today, options: []) else {
+        guard let rndDate1 = gregorian.date(byAdding: offsetComponents as DateComponents, to: today as Date, options: []) else {
             print("randoming failed")
             return today
         }
@@ -94,7 +94,7 @@ public extension NSDate {
 
     /// SwiftRandom extension
     public static func random() -> NSDate {
-        let randomTime = NSTimeInterval(arc4random_uniform(UInt32.max))
+        let randomTime = TimeInterval(arc4random_uniform(UInt32.max))
         return NSDate(timeIntervalSince1970: randomTime)
     }
 
@@ -122,7 +122,7 @@ public extension Array {
 public extension ArraySlice {
     /// SwiftRandom extension
     public func randomItem() -> Element {
-        let index = Int.random(self.startIndex..<self.endIndex)
+        let index = Int.random(lower: self.startIndex, self.endIndex)
         return self[index]
     }
 }
@@ -147,19 +147,19 @@ public struct Randoms {
     }
 
     public static func randomInt(range: Range<Int>) -> Int {
-        return Int.random(range)
+        return Int.random(range: range)
     }
 
     public static func randomInt(lower: Int = 0, _ upper: Int = 100) -> Int {
-        return Int.random(lower, upper)
+        return Int.random(lower, lower: upper)
     }
 
     public static func randomInt32(range: Range<Int>) -> Int32 {
-        return Int32.random(range)
+				return Int32.random(range: range)
     }
 
     public static func randomInt32(lower: Int = 0, _ upper: Int = 100) -> Int32{
-        return Int32.random(lower, upper)
+        return Int32.random(lower, lower: upper)
     }
 
     public static func randomPercentageisOver(percentage: Int) -> Bool {
@@ -167,19 +167,19 @@ public struct Randoms {
     }
 
     public static func randomDouble(lower: Double = 0, _ upper: Double = 100) -> Double {
-        return Double.random(lower, upper)
+        return Double.random(lower, lower: upper)
     }
 
     public static func randomFloat(lower: Float = 0, _ upper: Float = 100) -> Float {
-        return Float.random(lower, upper)
+        return Float.random(lower, lower: upper)
     }
 
     public static func randomCGFloat(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
-        return CGFloat.random(lower, upper)
+        return CGFloat.random(lower, lower: upper)
     }
 
     public static func randomDateWithinDaysBeforeToday(days: Int) -> NSDate {
-        return NSDate.randomWithinDaysBeforeToday(days)
+        return NSDate.randomWithinDaysBeforeToday(days: days)
     }
 
     public static func randomDate() -> NSDate {
@@ -187,7 +187,7 @@ public struct Randoms {
     }
 
     public static func randomColor(randomAlpha: Bool = false) -> UIColor {
-        return UIColor.random(randomAlpha)
+        return UIColor.random(randomAlpha: randomAlpha)
     }
 
     public static func randomNSURL() -> NSURL {
@@ -260,14 +260,14 @@ public struct Randoms {
     public static func createGravatar(style: Randoms.GravatarStyle = .Standard, size: Int = 80, completion: ((image: UIImage?, error: NSError?) -> Void)?) {
         var url = "https://secure.gravatar.com/avatar/thisimagewillnotbefound?s=\(size)"
         if style != .Standard {
-            url += "&d=\(style.rawValue.lowercaseString)"
+            url += "&d=\(style.rawValue.lowercased())"
         }
 
-        let request = NSURLRequest(URL: NSURL(string: url)!, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5.0)
-        let session = NSURLSession.sharedSession()
+				let request = NSURLRequest(url: NSURL(string: url)! as URL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5.0)
+        let session = URLSession.shared
 
-        session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+        session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
+            DispatchQueue.main.asynchronously() {
                 if error == nil {
                     completion?(image: UIImage(data: data!), error: nil)
                 } else {
@@ -279,7 +279,7 @@ public struct Randoms {
 
     public static func randomGravatar(size: Int = 80, completion: ((image: UIImage?, error: NSError?) -> Void)?) {
         let options = Randoms.GravatarStyle.allValues
-        Randoms.createGravatar(options.randomItem(), size: size, completion: completion)
+        Randoms.createGravatar(style: options.randomItem(), size: size, completion: completion)
     }
 }
 
