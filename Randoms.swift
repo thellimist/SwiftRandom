@@ -151,7 +151,7 @@ public struct Randoms {
     }
 
     public static func randomInt(lower: Int = 0, _ upper: Int = 100) -> Int {
-        return Int.random(lower, lower: upper)
+        return Int.random(lower: lower, upper)
     }
 
     public static func randomInt32(range: Range<Int>) -> Int32 {
