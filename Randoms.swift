@@ -5,7 +5,7 @@
 //  Copyright (c) 2015 Furkan Yilmaz. All rights reserved.
 //
 
-import UIKit
+import UIKita
 
 // each type has its own random
 
@@ -113,7 +113,11 @@ public extension UIColor {
 
 public extension Array {
     /// SwiftRandom extension
-    public func randomItem() -> Element {
+    public func randomItem() -> Element? {
+        guard self.count > 0 else {
+            return nil
+        }
+
         let index = Int(arc4random_uniform(UInt32(self.count)))
         return self[index]
     }
@@ -121,7 +125,11 @@ public extension Array {
 
 public extension ArraySlice {
     /// SwiftRandom extension
-    public func randomItem() -> Element {
+    public func randomItem() -> Element? {
+        guard self.count > 0 else {
+            return nil
+        }
+        
         let index = Int.random(lower: self.startIndex, self.endIndex)
         return self[index]
     }
