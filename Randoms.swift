@@ -5,7 +5,7 @@
 //  Copyright (c) 2015 Furkan Yilmaz. All rights reserved.
 //
 
-import UIKita
+import UIKit
 
 // each type has its own random
 
