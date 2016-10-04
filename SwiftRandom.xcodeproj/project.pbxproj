@@ -7,11 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53DC00941DA3313F00C3C823 /* SwiftRandomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC00931DA3313F00C3C823 /* SwiftRandomTests.swift */; };
+		53DC00961DA3313F00C3C823 /* SwiftRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */; };
 		B537B0CF1BCA9E3F005725CE /* SwiftRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B58CCF471BCA9E870033D848 /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CCF461BCA9E870033D848 /* Randoms.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		53DC00971DA3313F00C3C823 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B537B0C21BCA9E3E005725CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B537B0CA1BCA9E3E005725CE;
+			remoteInfo = "SwiftRandom-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		53DC00911DA3313F00C3C823 /* SwiftRandomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRandomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53DC00931DA3313F00C3C823 /* SwiftRandomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRandomTests.swift; sourceTree = "<group>"; };
+		53DC00951DA3313F00C3C823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRandom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRandom.h; sourceTree = "<group>"; };
 		B537B0D01BCA9E3F005725CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -19,6 +34,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		53DC008E1DA3313F00C3C823 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53DC00961DA3313F00C3C823 /* SwiftRandom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B537B0C71BCA9E3E005725CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,11 +52,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53DC00921DA3313F00C3C823 /* SwiftRandomTests */ = {
+			isa = PBXGroup;
+			children = (
+				53DC00951DA3313F00C3C823 /* Info.plist */,
+				53DC00931DA3313F00C3C823 /* SwiftRandomTests.swift */,
+			);
+			path = SwiftRandomTests;
+			sourceTree = "<group>";
+		};
 		B537B0C11BCA9E3E005725CE = {
 			isa = PBXGroup;
 			children = (
 				B537B0CC1BCA9E3E005725CE /* Products */,
 				B537B0CD1BCA9E3F005725CE /* SwiftRandom */,
+				53DC00921DA3313F00C3C823 /* SwiftRandomTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */,
+				53DC00911DA3313F00C3C823 /* SwiftRandomTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +103,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		53DC00901DA3313F00C3C823 /* SwiftRandomTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53DC00991DA3313F00C3C823 /* Build configuration list for PBXNativeTarget "SwiftRandomTests" */;
+			buildPhases = (
+				53DC008D1DA3313F00C3C823 /* Sources */,
+				53DC008E1DA3313F00C3C823 /* Frameworks */,
+				53DC008F1DA3313F00C3C823 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53DC00981DA3313F00C3C823 /* PBXTargetDependency */,
+			);
+			name = SwiftRandomTests;
+			productName = SwiftRandomTests;
+			productReference = 53DC00911DA3313F00C3C823 /* SwiftRandomTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B537B0CA1BCA9E3E005725CE /* SwiftRandom-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B537B0D31BCA9E3F005725CE /* Build configuration list for PBXNativeTarget "SwiftRandom-iOS" */;
@@ -93,9 +145,13 @@
 		B537B0C21BCA9E3E005725CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				TargetAttributes = {
+					53DC00901DA3313F00C3C823 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
 					B537B0CA1BCA9E3E005725CE = {
 						CreatedOnToolsVersion = 7.0.1;
 						LastSwiftMigration = 0800;
@@ -115,11 +171,19 @@
 			projectRoot = "";
 			targets = (
 				B537B0CA1BCA9E3E005725CE /* SwiftRandom-iOS */,
+				53DC00901DA3313F00C3C823 /* SwiftRandomTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		53DC008F1DA3313F00C3C823 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B537B0C91BCA9E3E005725CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +194,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		53DC008D1DA3313F00C3C823 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53DC00941DA3313F00C3C823 /* SwiftRandomTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B537B0C61BCA9E3E005725CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,7 +212,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		53DC00981DA3313F00C3C823 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B537B0CA1BCA9E3E005725CE /* SwiftRandom-iOS */;
+			targetProxy = 53DC00971DA3313F00C3C823 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		53DC009A1DA3313F00C3C823 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SwiftRandomTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = thellimist.SwiftRandom.SwiftRandomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		53DC009B1DA3313F00C3C823 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SwiftRandomTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = thellimist.SwiftRandom.SwiftRandomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		B537B0D11BCA9E3F005725CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -271,6 +387,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		53DC00991DA3313F00C3C823 /* Build configuration list for PBXNativeTarget "SwiftRandomTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53DC009A1DA3313F00C3C823 /* Debug */,
+				53DC009B1DA3313F00C3C823 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B537B0C51BCA9E3E005725CE /* Build configuration list for PBXProject "SwiftRandom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

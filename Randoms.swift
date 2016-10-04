@@ -19,8 +19,17 @@ public extension Bool {
 public extension Int {
     /// SwiftRandom extension
     public static func random(_ range: Range<Int>) -> Int {
-        return random(range.upperBound, range.lowerBound)
+		#if swift(>=3)
+        return random(range.lowerBound, range.upperBound - 1)
+		#else
+		return random(range.upperBound, range.lowerBound)
+		#endif
     }
+
+	/// SwiftRandom extension
+	public static func random(_ range: ClosedRange<Int>) -> Int {
+		return random(range.lowerBound, range.upperBound)
+	}
 
     /// SwiftRandom extension
     public static func random(_ lower: Int = 0, _ upper: Int = 100) -> Int {
@@ -125,8 +134,13 @@ public extension ArraySlice {
         guard self.count > 0 else {
             return nil
         }
-        
-        let index = Int.random(self.startIndex, self.endIndex)
+
+		#if swift(>=3)
+        let index = Int.random(self.startIndex, self.count - 1)
+		#else
+		let index = Int.random(self.startIndex, self.endIndex)
+		#endif
+
         return self[index]
     }
 }
@@ -159,7 +173,7 @@ public struct Randoms {
     }
 
     public static func randomInt32(_ range: Range<Int>) -> Int32 {
-				return Int32.random(range)
+		return Int32.random(range)
     }
 
     public static func randomInt32(_ lower: Int = 0, _ upper: Int = 100) -> Int32{
