@@ -30,7 +30,7 @@
 		B537B0CB1BCA9E3E005725CE /* SwiftRandom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRandom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537B0CE1BCA9E3F005725CE /* SwiftRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRandom.h; sourceTree = "<group>"; };
 		B537B0D01BCA9E3F005725CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B58CCF461BCA9E870033D848 /* Randoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randoms.swift; sourceTree = SOURCE_ROOT; };
+		B58CCF461BCA9E870033D848 /* Randoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Randoms.swift; path = SwiftRandom/Randoms.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
