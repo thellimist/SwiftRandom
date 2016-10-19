@@ -133,7 +133,7 @@ func asMethods() {
 * Create a `Cartfile` with the following specification and run `carthage update`.
 
 ```
-github "thellimist/SwiftRandom" >= 0.1.7
+github "thellimist/SwiftRandom" >= 1.0.0
 ```
 
 * Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
@@ -144,8 +144,11 @@ You can use [CocoaPods](http://cocoapods.org/) to install `SwiftRandom` by addin
 ```ruby
 platform :ios, '8.0'
 use_frameworks!
+pod  'SwiftRandom' #Stable release for Swift 3.0
 
-pod  'SwiftRandom'
+pod 'EZSwiftExtensions', :git => 'https://github.com/thellimist/SwiftRandom.git' #Latest release for Swift 3.0
+pod 'EZSwiftExtensions', :git => 'https://github.com/thellimist/SwiftRandom.git', :branch => '2.x' #For Swift 2.3
+
 ```
 
 ### Install Manually
