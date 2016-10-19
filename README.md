@@ -146,8 +146,8 @@ platform :ios, '8.0'
 use_frameworks!
 pod  'SwiftRandom' #Stable release for Swift 3.0
 
-pod 'EZSwiftExtensions', :git => 'https://github.com/thellimist/SwiftRandom.git' #Latest release for Swift 3.0
-pod 'EZSwiftExtensions', :git => 'https://github.com/thellimist/SwiftRandom.git', :branch => '2.x' #For Swift 2.3
+pod 'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git' #Latest release for Swift 3.0
+pod 'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git', :branch => '2.x' #For Swift 2.3
 
 ```
 
