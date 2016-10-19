@@ -145,7 +145,10 @@ You can use [CocoaPods](http://cocoapods.org/) to install `SwiftRandom` by addin
 platform :ios, '8.0'
 use_frameworks!
 pod  'SwiftRandom' #Stable release for Swift 3.0
+```
 
+To download older version you can use
+```
 pod 'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git' #Latest release for Swift 3.0
 pod 'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git', :branch => '2.x' #For Swift 2.3
 
