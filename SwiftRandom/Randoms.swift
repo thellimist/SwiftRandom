@@ -181,7 +181,7 @@ public struct Randoms {
     }
 
     public static func randomPercentageisOver(_ percentage: Int) -> Bool {
-        return Int.random() > percentage
+        return Int.random() >= percentage
     }
 
     public static func randomDouble(_ lower: Double = 0, _ upper: Double = 100) -> Double {
