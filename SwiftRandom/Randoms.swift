@@ -78,7 +78,7 @@ public extension String {
     
     /// SwiftRandom extension
     public static func random(withCharactersInString string: String, minimumLength min: Int, maximumLength max: Int) -> String {
-        guard min > 0 && max > 0 else {
+        guard min > 0 && max >= min else {
             return ""
         }
         
