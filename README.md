@@ -28,6 +28,12 @@ func asExtension() {
 	var someArray = ["hello", "world"]
 	someArray[0..<someArray.count].randomItem() // Array slice
 	someArray.randomItem()
+	
+	// String Extensions
+	String.random(ofLength: 16)
+	String.random(minimumLength: 16, maximumLength: 32)
+	String.random(withCharactersInString: "abc", ofLength: 16)
+	String.random(withCharactersInString: "abc", minimumLength: 16, maximumLength: 32)
 }
 ```
 
@@ -40,6 +46,18 @@ func asMethods() {
 	// Return random Int32 >= 10 and <= 20
 	// Example Output: 13
 	Randoms.randomInt32(10,20)
+	
+	// Returns a random 16 character long string containing alphanumeric characters 
+	Randoms.randomString(ofLength: 16)
+	
+	// Returns a random string containing alphanumeric characters ranging in length from 16 to 32.
+	Randoms.randomString(minimumLength: 16, maximumLength: 32)
+	
+	// Returns a random 16 character long string containing the specified characters
+	Randoms.randomString(withCharactersInString: "abc", ofLength: 16)
+	
+	// Returns a random string of length between 16 and 32 containing the specified characters
+	Randoms.randomString(withCharactersInString: "abc", minimumLength: 16, maximumLength: 32)
 	
 	// Return random Double >= 10 and <= 20
 	// Example Output: 11.511219042938

@@ -52,6 +52,49 @@ public extension Int32 {
     }
 }
 
+public extension String {
+    /// SwiftRandom extension
+    public static func random(ofLength length: Int) -> String {
+        return random(minimumLength: length, maximumLength: length)
+    }
+    
+    /// SwiftRandom extension
+    public static func random(minimumLength min: Int, maximumLength max: Int) -> String {
+        return random(
+            withCharactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+            minimumLength: min,
+            maximumLength: max
+        )
+    }
+    
+    /// SwiftRandom extension
+    public static func random(withCharactersInString string: String, ofLength length: Int) -> String {
+        return random(
+            withCharactersInString: string,
+            minimumLength: length,
+            maximumLength: length
+        )
+    }
+    
+    /// SwiftRandom extension
+    public static func random(withCharactersInString string: String, minimumLength min: Int, maximumLength max: Int) -> String {
+        guard min > 0 && max >= min else {
+            return ""
+        }
+        
+        let length: Int = (min < max) ? .random(min...max) : max
+        var randomString = ""
+        
+        (1...length).forEach { _ in
+            let randomIndex: Int = .random(0..<string.characters.count)
+            let c = string.index(string.startIndex, offsetBy: randomIndex)
+            randomString += String(string[c])
+        }
+        
+        return randomString
+    }
+}
+
 public extension Double {
     /// SwiftRandom extension
     public static func random(_ lower: Double = 0, _ upper: Double = 100) -> Double {
@@ -180,6 +223,22 @@ public struct Randoms {
         return Int32.random(lower, upper)
     }
 
+    public static func randomString(ofLength length: Int) -> String {
+        return String.random(ofLength: length)
+    }
+    
+    public static func randomString(minimumLength min: Int, maximumLength max: Int) -> String {
+        return String.random(minimumLength: min, maximumLength: max)
+    }
+    
+    public static func randomString(withCharactersInString string: String, ofLength length: Int) -> String {
+        return String.random(withCharactersInString: string, ofLength: length)
+    }
+    
+    public static func randomString(withCharactersInString string: String, minimumLength min: Int, maximumLength max: Int) -> String {
+        return String.random(withCharactersInString: string, minimumLength: min, maximumLength: max)
+    }
+    
     public static func randomPercentageisOver(_ percentage: Int) -> Bool {
         return Int.random() >= percentage
     }

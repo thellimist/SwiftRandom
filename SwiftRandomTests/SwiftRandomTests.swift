@@ -66,6 +66,75 @@ class SwiftRandomTests: XCTestCase {
             XCTAssertLessThan(randomLessTen, 10)
         }
     }
+	
+    /// Tests generating random a `String` of a specified length.
+    func testRandomStringOfLength() {
+        let precision = 100
+        let length = 128
+        
+        var all: [String] = []
+        
+        (1...precision).forEach { _ in
+            let random: String = .random(ofLength: length)
+            XCTAssertEqual(random.characters.count, length)
+            
+            if all.contains(random) {
+                // this is very unlikely to happen with precisions of 100 or over and lengths of 128 or over.
+                // if this happens, it is likely a bug in the random string generator.
+                XCTFail("Random string collision")
+            }
+            all.append(random)
+        }
+        
+        XCTAssertEqual(String.random(ofLength: -1), "")
+        XCTAssertEqual(String.random(ofLength: 0), "")
+    }
+    
+    /// Tests generating a random `String` of variable length.
+    func testRandomStringOfVariableLength() {
+        let precision = 100
+        let minimumLength = 128
+        let maximumLength = 256
+        
+        var all: [String] = []
+        
+        (1...precision).forEach { _ in
+            let random: String = .random(minimumLength: minimumLength, maximumLength: maximumLength)
+            XCTAssertLessThanOrEqual(random.characters.count, maximumLength)
+            XCTAssertGreaterThanOrEqual(random.characters.count, minimumLength)
+            
+            if all.contains(random) {
+                // this is very unlikely to happen with precisions of 100 or over and lengths of 128 or over.
+                // if this happens, it is likely a bug in the random string generator.
+                XCTFail("Random string collision")
+            }
+            all.append(random)
+        }
+        
+        XCTAssertEqual(String.random(minimumLength: -1, maximumLength: -2), "")
+        XCTAssertEqual(String.random(minimumLength: 1, maximumLength: -2), "")
+        XCTAssertEqual(String.random(minimumLength: -1, maximumLength: 2), "")
+        XCTAssertEqual(String.random(minimumLength: 0, maximumLength: 0), "")
+        XCTAssertEqual(String.random(minimumLength: -1, maximumLength: 0), "")
+        XCTAssertEqual(String.random(minimumLength: 0, maximumLength: -2), "")
+        XCTAssertEqual(String.random(minimumLength: 10, maximumLength: 5), "")
+        
+        XCTAssertEqual(String.random(minimumLength: 5, maximumLength: 5).characters.count, 5)
+    }
+    
+    /// Tests generating a string with a character set specified
+    func testRandomStringWithPossibleCharacters() {
+        let precision = 100
+        let length = 3
+        let allowedCharacters = "ab"
+        
+        (1...precision).forEach { _ in
+            let random: String = .random(withCharactersInString: "ab", ofLength: length)
+            for c in random.characters {
+                XCTAssertTrue(allowedCharacters.characters.contains(c))
+            }
+        }
+    }
 
     /// Tests using async way to get a random gravatar.
     func testRandomGravatar() {
