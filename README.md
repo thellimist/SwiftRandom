@@ -30,17 +30,10 @@ func asExtension() {
 	someArray.randomItem()
 	
 	// String Extensions
-	// generates a random string containing the specified characters only ranging from 16 to 32 in length.
-	let some: String = .random(withCharactersInString: "abc", minimumLength: 16, maximumLength: 32)
-	
-	// generates a random string containing alphanumeric characters ranging in length from 16 to 32.
-	let some: String = .random(minimumLength: 16, maximumLength: 32)
-	
-	// generates a random 16 character long string containing alphanumeric characters 
-	let some: String = .random(ofLength: 16)
-	
-	// generates a random 16 character long string containing the specified characters
-	let some: String = .random(withCharactersInString: "abc", ofLength: 16)
+	String.random(ofLength: 16)
+	String.random(minimumLength: 16, maximumLength: 32)
+	String.random(withCharactersInString: "abc", ofLength: 16)
+	String.random(withCharactersInString: "abc", minimumLength: 16, maximumLength: 32)
 }
 ```
 
@@ -54,7 +47,16 @@ func asMethods() {
 	// Example Output: 13
 	Randoms.randomInt32(10,20)
 	
-	// Return a random string of length between 16 and 32 containing the specified characters
+	// Returns a random 16 character long string containing alphanumeric characters 
+	Randoms.randomString(ofLength: 16)
+	
+	// Returns a random string containing alphanumeric characters ranging in length from 16 to 32.
+	Randoms.randomString(minimumLength: 16, maximumLength: 32)
+	
+	// Returns a random 16 character long string containing the specified characters
+	Randoms.randomString(withCharactersInString: "abc", ofLength: 16)
+	
+	// Returns a random string of length between 16 and 32 containing the specified characters
 	Randoms.randomString(withCharactersInString: "abc", minimumLength: 16, maximumLength: 32)
 	
 	// Return random Double >= 10 and <= 20

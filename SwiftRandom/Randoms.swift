@@ -59,20 +59,20 @@ public extension String {
     }
     
     /// SwiftRandom extension
-    public static func random(withCharactersInString string: String, ofLength length: Int) -> String {
-        return random(
-            withCharactersInString: string,
-            minimumLength: length,
-            maximumLength: length
-        )
-    }
-    
-    /// SwiftRandom extension
     public static func random(minimumLength min: Int, maximumLength max: Int) -> String {
         return random(
             withCharactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
             minimumLength: min,
             maximumLength: max
+        )
+    }
+    
+    /// SwiftRandom extension
+    public static func random(withCharactersInString string: String, ofLength length: Int) -> String {
+        return random(
+            withCharactersInString: string,
+            minimumLength: length,
+            maximumLength: length
         )
     }
     
@@ -223,6 +223,18 @@ public struct Randoms {
         return Int32.random(lower, upper)
     }
 
+    public static func randomString(ofLength length: Int) -> String {
+        return String.random(ofLength: length)
+    }
+    
+    public static func randomString(minimumLength min: Int, maximumLength max: Int) -> String {
+        return String.random(minimumLength: min, maximumLength: max)
+    }
+    
+    public static func randomString(withCharactersInString string: String, ofLength length: Int) -> String {
+        return String.random(withCharactersInString: string, ofLength: length)
+    }
+    
     public static func randomString(withCharactersInString string: String, minimumLength min: Int, maximumLength max: Int) -> String {
         return String.random(withCharactersInString: string, minimumLength: min, maximumLength: max)
     }
