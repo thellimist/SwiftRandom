@@ -119,7 +119,7 @@ class SwiftRandomTests: XCTestCase {
         XCTAssertEqual(String.random(minimumLength: 0, maximumLength: -2), "")
         XCTAssertEqual(String.random(minimumLength: 10, maximumLength: 5), "")
         
-		XCTAssertEqual(String.random(minimumLength: 5, maximumLength: 5).characters.count, 5)
+        XCTAssertEqual(String.random(minimumLength: 5, maximumLength: 5).characters.count, 5)
     }
     
     /// Tests generating a string with a character set specified
