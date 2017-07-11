@@ -139,7 +139,7 @@ func asMethods() {
 
 ```
 
-###Requirements
+### Requirements
 
 - Swift version 2.0
 
@@ -177,10 +177,10 @@ pod 'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git', :bra
 - Download and drop 'Randoms.swift' in your project.
 
 
-###Improvement
+### Improvement
 - Feel free adding your own random data functions and sending pull requests.
 
-#####Possible features:
+##### Possible features:
 - Random wildlife pictures (Should not include the image inside project, should load it from web when needed)
 - Make OSX compatiable and add here: https://github.com/AndrewSB/awesome-osx
 - Random JSON
@@ -188,8 +188,8 @@ pod 'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git', :bra
 - Random Videos (Should not include videos inside the project, should load it from web when needed)
 - Implement `SwiftRandom` as a protocol any class can conform to (`Post.random()` would give you a random post)
 
-###License
+### License
 - SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
 
-##Keywords
+## Keywords
 random, swift, data, generator, faker, fake, gravatar
