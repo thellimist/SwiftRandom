@@ -40,7 +40,7 @@ public extension Int {
 public extension Int32 {
     /// SwiftRandom extension
     public static func random(_ range: Range<Int>) -> Int32 {
-        return random(range.upperBound, range.lowerBound)
+        return random(range.lowerBound, range.upperBound)
     }
 
     /// SwiftRandom extension

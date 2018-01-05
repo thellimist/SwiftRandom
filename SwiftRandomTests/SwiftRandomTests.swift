@@ -33,6 +33,7 @@ class SwiftRandomTests: XCTestCase {
     /// Tests for extensions applied directly above Swift types.
     func testTypeExtensions() {
         XCTAssertNotNil(Int.random())
+        XCTAssertNotNil(Int32.random())
         XCTAssertNotNil(Date.random())
         XCTAssertNotNil(Date.randomWithinDaysBeforeToday(7))
         XCTAssertNotNil(CGFloat.random())
@@ -66,7 +67,17 @@ class SwiftRandomTests: XCTestCase {
             XCTAssertLessThan(randomLessTen, 10)
         }
     }
-	
+
+    func testRandomInt32Range() {
+        for _ in 0...10 {
+
+            let randomLessTen = Int32.random(0..<10)
+
+            XCTAssertGreaterThanOrEqual(randomLessTen, Int32(0))
+            XCTAssertLessThan(randomLessTen, Int32(10))
+        }
+    }
+
     /// Tests generating random a `String` of a specified length.
     func testRandomStringOfLength() {
         let precision = 100
