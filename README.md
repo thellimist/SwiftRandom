@@ -28,6 +28,12 @@ func asExtension() {
 	var someArray = ["hello", "world"]
 	someArray[0..<someArray.count].randomItem() // Array slice
 	someArray.randomItem()
+	
+	// String Extensions
+	String.random(ofLength: 16)
+	String.random(minimumLength: 16, maximumLength: 32)
+	String.random(withCharactersInString: "abc", ofLength: 16)
+	String.random(withCharactersInString: "abc", minimumLength: 16, maximumLength: 32)
 }
 ```
 
@@ -40,6 +46,18 @@ func asMethods() {
 	// Return random Int32 >= 10 and <= 20
 	// Example Output: 13
 	Randoms.randomInt32(10,20)
+	
+	// Returns a random 16 character long string containing alphanumeric characters 
+	Randoms.randomString(ofLength: 16)
+	
+	// Returns a random string containing alphanumeric characters ranging in length from 16 to 32.
+	Randoms.randomString(minimumLength: 16, maximumLength: 32)
+	
+	// Returns a random 16 character long string containing the specified characters
+	Randoms.randomString(withCharactersInString: "abc", ofLength: 16)
+	
+	// Returns a random string of length between 16 and 32 containing the specified characters
+	Randoms.randomString(withCharactersInString: "abc", minimumLength: 16, maximumLength: 32)
 	
 	// Return random Double >= 10 and <= 20
 	// Example Output: 11.511219042938
@@ -121,7 +139,7 @@ func asMethods() {
 
 ```
 
-###Requirements
+### Requirements
 
 - Swift version 2.0
 
@@ -133,7 +151,7 @@ func asMethods() {
 * Create a `Cartfile` with the following specification and run `carthage update`.
 
 ```
-github "thellimist/SwiftRandom" >= 0.1.7
+github "thellimist/SwiftRandom" >= 1.0.0
 ```
 
 * Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add the framework to an iOS project.
@@ -144,8 +162,14 @@ You can use [CocoaPods](http://cocoapods.org/) to install `SwiftRandom` by addin
 ```ruby
 platform :ios, '8.0'
 use_frameworks!
+pod  'SwiftRandom' #Stable release for Swift 3.0
+```
 
-pod  'SwiftRandom'
+To download older version you can use
+```
+pod 'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git' #Latest release for Swift 3.0
+pod 'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git', :branch => '2.x' #For Swift 2.3
+
 ```
 
 ### Install Manually
@@ -153,10 +177,10 @@ pod  'SwiftRandom'
 - Download and drop 'Randoms.swift' in your project.
 
 
-###Improvement
+### Improvement
 - Feel free adding your own random data functions and sending pull requests.
 
-#####Possible features:
+##### Possible features:
 - Random wildlife pictures (Should not include the image inside project, should load it from web when needed)
 - Make OSX compatiable and add here: https://github.com/AndrewSB/awesome-osx
 - Random JSON
@@ -164,8 +188,8 @@ pod  'SwiftRandom'
 - Random Videos (Should not include videos inside the project, should load it from web when needed)
 - Implement `SwiftRandom` as a protocol any class can conform to (`Post.random()` would give you a random post)
 
-###License
+### License
 - SwiftRandom is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/SwiftRandom/blob/master/LICENSE).
 
-##Keywords
+## Keywords
 random, swift, data, generator, faker, fake, gravatar
