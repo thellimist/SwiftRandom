@@ -21,6 +21,7 @@ func asExtension() {
 	CGFloat.random()
 	NSDate.random()
 	NSDate.randomWithinDaysBeforeToday(7)
+	NSDate.random(between: Date().addingTimeInterval(TimeInterval(-5*24*60*60)), and:Date()) // Random date between now and 5 days ago
 	UIColor.random()
 	NSURL.random()
 	

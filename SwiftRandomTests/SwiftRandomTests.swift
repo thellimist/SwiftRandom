@@ -193,4 +193,48 @@ class SwiftRandomTests: XCTestCase {
 
         waitForExpectations(timeout: 3.5, handler: nil)
     }
+    
+    /// Tests for generating random dates
+    func testRandomDates() {
+        
+        // Ensure that a date in the future will not be generated if the user selects a zero number of days.
+        let date = Date.randomWithinDaysBeforeToday(0)
+        let now = Date()
+        let fiveDaysAgo = now.addingTimeInterval(-5*24*60*60)
+        
+        XCTAssertTrue(date <= now)
+        
+        
+        // Generate lots of random date between two specified dates and ensure they all will be inside the desired interval
+        
+        var lastDate = Date()
+        for _ in 0...1000 {
+            let randomDate = Date.random(between: fiveDaysAgo, and: now)
+            XCTAssertLessThanOrEqual(randomDate, now)
+            XCTAssertGreaterThanOrEqual(randomDate, fiveDaysAgo)
+            
+            // Ensure the generated dates are different
+            XCTAssertNotEqual(randomDate, lastDate)
+            lastDate = randomDate
+        }
+        
+        lastDate = Date()
+        for _ in 0...1000 {
+            let randomDate = Date.randomWithinDaysBeforeToday(5)
+            XCTAssertLessThanOrEqual(randomDate, now)
+            XCTAssertGreaterThanOrEqual(randomDate, fiveDaysAgo)
+            
+            // Ensure the generated dates are different
+            XCTAssertNotEqual(randomDate, lastDate)
+            lastDate = randomDate
+        }
+        
+        lastDate = Date()
+        for _ in 0...1000 {
+            let randomDate = Date.random()
+            // Ensure the generated dates are different
+            XCTAssertNotEqual(randomDate, lastDate)
+            lastDate = randomDate
+        }
+    }
 }
