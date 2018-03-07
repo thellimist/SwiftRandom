@@ -22,6 +22,8 @@ class SwiftRandomTests: XCTestCase {
         XCTAssertNotNil(Randoms.randomDate())
         XCTAssertNotNil(Randoms.randomColor())
         XCTAssertNotNil(Randoms.randomFakeName())
+        XCTAssertNotNil(Randoms.randomFakeFirstName())
+        XCTAssertNotNil(Randoms.randomFakeLastName())
         XCTAssertNotNil(Randoms.randomFakeGender())
         XCTAssertNotNil(Randoms.randomFakeConversation())
         XCTAssertNotNil(Randoms.randomFakeTitle())
