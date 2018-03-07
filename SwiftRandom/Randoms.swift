@@ -267,9 +267,17 @@ public struct Randoms {
     //==========================================================================================================
 
     public static func randomFakeName() -> String {
+        return randomFakeFirstName() + " " + randomFakeLastName()
+    }
+    
+    public static func randomFakeFirstName() -> String {
         let firstNameList = ["Henry", "William", "Geoffrey", "Jim", "Yvonne", "Jamie", "Leticia", "Priscilla", "Sidney", "Nancy", "Edmund", "Bill", "Megan"]
+        return firstNameList.randomItem()!
+    }
+    
+    public static func randomFakeLastName() -> String {
         let lastNameList = ["Pearson", "Adams", "Cole", "Francis", "Andrews", "Casey", "Gross", "Lane", "Thomas", "Patrick", "Strickland", "Nicolas", "Freeman"]
-        return firstNameList.randomItem()! + " " + lastNameList.randomItem()!
+        return lastNameList.randomItem()!
     }
 
     public static func randomFakeGender() -> String {

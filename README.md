@@ -102,6 +102,14 @@ func asMethods() {
 	// Example Output: "Megan Freeman"
 	Randoms.randomFakeName()
 
+	// Return random first name
+	// Example Output: "Megan"
+	Randoms.randomFakeFirstName()
+
+	// Return random last name
+	// Example Output: "Freeman"
+	Randoms.randomFakeLastName()
+
 	// Return random fake name prefixed by English honorific
 	// Example Output: "Dr. Megan Freeman"
 	Randoms.randomFakeNameAndEnglishHonorific()
