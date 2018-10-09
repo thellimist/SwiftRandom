@@ -49,20 +49,20 @@ class SwiftRandomTests: XCTestCase {
         let entry = ["hello", "world"]
 
         for _ in 0...10 {
-            XCTAssertNotNil(entry[0..<entry.count].randomItem())
-            XCTAssertNotNil(entry.randomItem())
+            XCTAssertNotNil(entry[0..<entry.count].randomElement())
+            XCTAssertNotNil(entry.randomElement())
         }
     }
 
     /// Tests using SwiftRandom above a `Range` of Int.
     func testRandomIntRange() {
         for _ in 0...10 {
-            let randomUntilTen = Int.random(0...10)
+            let randomUntilTen = Int.random(in: 0...10)
 
             XCTAssertGreaterThanOrEqual(randomUntilTen, 0)
             XCTAssertLessThanOrEqual(randomUntilTen, 10)
 
-            let randomLessTen = Int.random(0..<10)
+            let randomLessTen = Int.random(in: 0..<10)
 
             XCTAssertGreaterThanOrEqual(randomLessTen, 0)
             XCTAssertLessThan(randomLessTen, 10)
@@ -78,7 +78,7 @@ class SwiftRandomTests: XCTestCase {
         
         (1...precision).forEach { _ in
             let random: String = .random(ofLength: length)
-            XCTAssertEqual(random.characters.count, length)
+            XCTAssertEqual(random.count, length)
             
             if all.contains(random) {
                 // this is very unlikely to happen with precisions of 100 or over and lengths of 128 or over.
@@ -102,8 +102,8 @@ class SwiftRandomTests: XCTestCase {
         
         (1...precision).forEach { _ in
             let random: String = .random(minimumLength: minimumLength, maximumLength: maximumLength)
-            XCTAssertLessThanOrEqual(random.characters.count, maximumLength)
-            XCTAssertGreaterThanOrEqual(random.characters.count, minimumLength)
+            XCTAssertLessThanOrEqual(random.count, maximumLength)
+            XCTAssertGreaterThanOrEqual(random.count, minimumLength)
             
             if all.contains(random) {
                 // this is very unlikely to happen with precisions of 100 or over and lengths of 128 or over.
@@ -121,7 +121,7 @@ class SwiftRandomTests: XCTestCase {
         XCTAssertEqual(String.random(minimumLength: 0, maximumLength: -2), "")
         XCTAssertEqual(String.random(minimumLength: 10, maximumLength: 5), "")
         
-        XCTAssertEqual(String.random(minimumLength: 5, maximumLength: 5).characters.count, 5)
+        XCTAssertEqual(String.random(minimumLength: 5, maximumLength: 5).count, 5)
     }
     
     /// Tests generating a string with a character set specified
@@ -132,8 +132,8 @@ class SwiftRandomTests: XCTestCase {
         
         (1...precision).forEach { _ in
             let random: String = .random(withCharactersInString: "ab", ofLength: length)
-            for c in random.characters {
-                XCTAssertTrue(allowedCharacters.characters.contains(c))
+            for c in random {
+                XCTAssertTrue(allowedCharacters.contains(c))
             }
         }
     }
