@@ -9,9 +9,16 @@ import UIKit
 
 // each type has its own random
 
+public extension Bool {
+    /// SwiftRandom extension
+    static func random() -> Bool {
+        return Int.random() % 2 == 0
+    }
+}
+
 public extension Int {
     /// SwiftRandom extension
-    public static func random(_ lower: Int = 0, _ upper: Int = 100) -> Int {
+    static func random(_ lower: Int = 0, _ upper: Int = 100) -> Int {
         return Int.random(in: lower...upper)
     }
 }
@@ -20,7 +27,7 @@ public extension Int32 {
     /// SwiftRandom extension
     ///
     /// - note: Using `Int` as parameter type as we usually just want to write `Int32.random(13, 37)` and not `Int32.random(Int32(13), Int32(37))`
-    public static func random(_ lower: Int = 0, _ upper: Int = 100) -> Int32 {
+    static func random(_ lower: Int = 0, _ upper: Int = 100) -> Int32 {
         return Int32.random(in: Int32(lower)...Int32(upper))
     }
 }
@@ -32,7 +39,7 @@ public extension String {
     }
     
     /// SwiftRandom extension
-    public static func random(minimumLength min: Int, maximumLength max: Int) -> String {
+    static func random(minimumLength min: Int, maximumLength max: Int) -> String {
         return random(
             withCharactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
             minimumLength: min,
@@ -41,7 +48,7 @@ public extension String {
     }
     
     /// SwiftRandom extension
-    public static func random(withCharactersInString string: String, ofLength length: Int) -> String {
+    static func random(withCharactersInString string: String, ofLength length: Int) -> String {
         return random(
             withCharactersInString: string,
             minimumLength: length,
@@ -50,7 +57,7 @@ public extension String {
     }
     
     /// SwiftRandom extension
-    public static func random(withCharactersInString string: String, minimumLength min: Int, maximumLength max: Int) -> String {
+    static func random(withCharactersInString string: String, minimumLength min: Int, maximumLength max: Int) -> String {
         guard min > 0 && max >= min else {
             return ""
         }
@@ -70,28 +77,28 @@ public extension String {
 
 public extension Double {
     /// SwiftRandom extension
-    public static func random(_ lower: Double = 0, _ upper: Double = 100) -> Double {
+    static func random(_ lower: Double = 0, _ upper: Double = 100) -> Double {
         return Double.random(in: lower...upper)
     }
 }
 
 public extension Float {
     /// SwiftRandom extension
-    public static func random(_ lower: Float = 0, _ upper: Float = 100) -> Float {
+    static func random(_ lower: Float = 0, _ upper: Float = 100) -> Float {
         return Float.random(in: lower...upper)
     }
 }
 
 public extension CGFloat {
     /// SwiftRandom extension
-    public static func random(_ lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
+    static func random(_ lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
         return CGFloat.random(in: lower...upper)
     }
 }
 
 public extension Date {
     /// SwiftRandom extension
-    public static func randomWithinDaysBeforeToday(_ days: Int) -> Date {
+    static func randomWithinDaysBeforeToday(_ days: Int) -> Date {
         let today = Date()
         let earliest = today.addingTimeInterval(TimeInterval(-days*24*60*60))
         
@@ -99,12 +106,12 @@ public extension Date {
     }
 
     /// SwiftRandom extension
-    public static func random() -> Date {
+    static func random() -> Date {
         let randomTime = TimeInterval(arc4random_uniform(UInt32.max))
         return Date(timeIntervalSince1970: randomTime)
     }
     
-    public static func random(between initial: Date, and final:Date) -> Date {
+    static func random(between initial: Date, and final:Date) -> Date {
         let interval = final.timeIntervalSince(initial)
         let randomInterval = TimeInterval(arc4random_uniform(UInt32(interval)))
         return initial.addingTimeInterval(randomInterval)
@@ -114,7 +121,7 @@ public extension Date {
 
 public extension UIColor {
     /// SwiftRandom extension
-    public static func random(_ randomAlpha: Bool = false) -> UIColor {
+    static func random(_ randomAlpha: Bool = false) -> UIColor {
         let randomRed = CGFloat.random()
         let randomGreen = CGFloat.random()
         let randomBlue = CGFloat.random()
@@ -125,7 +132,7 @@ public extension UIColor {
 
 public extension URL {
     /// SwiftRandom extension
-    public static func random() -> URL {
+    static func random() -> URL {
         let urlList = ["http://www.google.com", "http://leagueoflegends.com/", "https://github.com/", "http://stackoverflow.com/", "https://medium.com/", "http://9gag.com/gag/6715049", "http://imgur.com/gallery/s9zoqs9", "https://www.youtube.com/watch?v=uelHwf8o7_U"]
         return URL(string: urlList.randomElement()!)!
     }
@@ -266,26 +273,26 @@ public struct Randoms {
         return currencyList.randomElement()!
     }
 
-    public enum GravatarStyle: String {
+       public enum GravatarStyle: String {
         case Standard
         case MM
         case Identicon
         case MonsterID
         case Wavatar
         case Retro
-
+        
         static let allValues = [Standard, MM, Identicon, MonsterID, Wavatar, Retro]
     }
-
+    
     public static func createGravatar(_ style: Randoms.GravatarStyle = .Standard, size: Int = 80, completion: ((_ image: UIImage?, _ error: Error?) -> Void)?) {
         var url = "https://secure.gravatar.com/avatar/thisimagewillnotbefound?s=\(size)"
         if style != .Standard {
             url += "&d=\(style.rawValue.lowercased())"
         }
-
+        
         let request = URLRequest(url: URL(string: url)! as URL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5.0)
         let session = URLSession.shared
-
+        
         session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
                 if error == nil {
@@ -294,11 +301,11 @@ public struct Randoms {
                     completion?(nil, error)
                 }
             }
-                         }).resume()
+        }).resume()
     }
-
+    
     public static func randomGravatar(_ size: Int = 80, completion: ((_ image: UIImage?, _ error: Error?) -> Void)?) {
         let options = Randoms.GravatarStyle.allValues
-        Randoms.createGravatar(options.randomElement()!, size: size, completion: completion)
+        Randoms.createGravatar(options.randomItem()!, size: size, completion: completion)
     }
 }
