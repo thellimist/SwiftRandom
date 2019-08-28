@@ -138,6 +138,20 @@ public extension URL {
     }
 }
 
+public extension String {
+    public static func random(_ length: Int = 5) -> String {
+        let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var char = charSet.characters.map { String($0) }
+        var randomString = ""
+
+        for _ in (1...length) {
+            randomString = randomString + char[Int(arc4random()) % char.count]
+        }
+
+        return randomString
+    }
+}
+
 
 public struct Randoms {
 
@@ -211,6 +225,10 @@ public struct Randoms {
 
     public static func randomNSURL() -> URL {
         return URL.random()
+    }
+    
+    public func randomString(_ length: Int = 5) -> String {
+        return String.random(length)
     }
 
     //==========================================================================================================
