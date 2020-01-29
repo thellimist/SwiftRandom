@@ -34,7 +34,7 @@ public extension Int32 {
 
 public extension String {
     /// SwiftRandom extension
-    public static func random(ofLength length: Int) -> String {
+    static func random(ofLength length: Int) -> String {
         return random(minimumLength: length, maximumLength: length)
     }
     
@@ -306,6 +306,6 @@ public struct Randoms {
     
     public static func randomGravatar(_ size: Int = 80, completion: ((_ image: UIImage?, _ error: Error?) -> Void)?) {
         let options = Randoms.GravatarStyle.allValues
-        Randoms.createGravatar(options.randomItem()!, size: size, completion: completion)
+        Randoms.createGravatar(options.randomElement()!, size: size, completion: completion)
     }
 }
